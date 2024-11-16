@@ -29,7 +29,7 @@
 
 
 
-<!--SsliderBtns-->
+<!--SsliderBtns.-->
 <div class="SliderBtns">
 
     <div class="Btn">
