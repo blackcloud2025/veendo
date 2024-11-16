@@ -30,7 +30,7 @@
                     <span class="text nav-text"> Editar. </span>
                 </a>
 
-                <!-- Formulario para eliminar el producto -->
+                <!-- Formulario para eliminar producto -->
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                     @csrf
                     @method('DELETE')

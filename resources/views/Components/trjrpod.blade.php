@@ -22,7 +22,7 @@
         <h3>{{ $descriptionTitle }}</h3>
         <p>{{ $description }}</p>
     </div>
-
+    <!--seccion reparada-->
     <div class="content3">
         <h3>Categoría: {{ $category ?? 'No especificada' }}</h3>
         @if($color)
