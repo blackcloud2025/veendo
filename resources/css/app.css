@@ -582,6 +582,26 @@ body.dark .home .text {
 
 
 
+.product-container button {
+    width: 170px;
+    height: 25px;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.product-container button:hover {
+    color: white;
+    background-color: red;
+}
+
+
+
+
 /* ===== trjrpod ===== */
 
 .trjrpod {
