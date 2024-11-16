@@ -8,6 +8,8 @@
         <span class="text nav-text">Subir producto.</span>
     </a>
 </div>
+<div class="action-bar" style="padding-left: 50px; padding-top: 7px; color:var(--text-color)"><h1> Mis productos.</h1></div>
+
 
 <div class="Contenedor">
     <div class="product-container">
@@ -25,10 +27,14 @@
             <p class="price">Precio: ${{ $product->price }}</p>
 
             <!-- boton para editar el producto -->    
-                <a href="{{ route('editar', $product->id) }}">
-                    <i class='bx bxs-edit-alt'></i>
-                    <span class="text nav-text"> Editar. </span>
-                </a>
+                <form action="{{ route('editar', $product->id) }}">
+                    @csrf
+                    <button type="submit">
+                        <i class='bx bxs-edit-alt'></i>
+                        <span class="text nav-text"> Editar.</span>
+                    </button>
+                </form>
+
 
                 <!-- Formulario para eliminar producto -->
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST">
