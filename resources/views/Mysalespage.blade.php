@@ -13,6 +13,7 @@
 
 <div class="Contenedor">
     <div class="product-container">
+        <!-- tarjeta que muestra el contenido -->
         @foreach($products as $product)
         <div class="product-card" data-id="{{$product->id}}">
         <div class="image-container">
@@ -20,7 +21,6 @@
             <img loading="lazy" clr src="{{Storage::url($product->images->first()->image_path) }}" alt="{{ $product->name }}">
             @endif
         </div>
-            <!-- tarjeta que muestra el contenido -->
             <div class="product-details">
             <p class="discount">OFF {{ $product->offer }}%</p>
             <h3>{{ $product->name }}</h3>
