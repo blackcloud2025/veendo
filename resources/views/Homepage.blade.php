@@ -26,9 +26,6 @@
     <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
 </div>
 
-
-
-
 <!--SsliderBtns.-->
 <div class="SliderBtns">
 
@@ -58,18 +55,34 @@
 <div class="contenedor">
     <div class="product-container">
         @foreach($products as $product)
+
         <div class="product-card" data-id="{{$product->id}}">
+
             <div class="image-container">
                 @if($product->images->isNotEmpty())
                 <img loading="lazy" clr src="{{Storage::url($product->images->first()->image_path) }}" alt="{{ $product->name }}">
                 @endif
             </div>
+
             <div class="product-details">
             <p class="discount">OFF {{ $product->offer }}%</p>
             <h3>{{ $product->name }}</h3>
             <p class="price">Precio: ${{ $product->price }}</p>
-                <a href="{{ route('product.show', ['id' => $product->id]) }}">saber mas.</a>
-                <a href="#">agregar.</a>
+
+            <form action="{{ route('product.show', ['id' => $product->id]) }}">
+                    @csrf
+                    <button type="submit">
+                        <span class="text nav-text"> saber mas.</span>
+                    </button>
+            </form>
+
+            <form action="#">
+                    <button type="submit">
+                        <span class="text nav-text"> agregar.</span>
+                    </button>
+            </form>
+                
+            
             </div>
             
         </div>
