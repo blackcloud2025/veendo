@@ -19,9 +19,6 @@
 </x-trjrpod>
 
 
-
-<h2 style="color: white; margin-left:30px; width: 300px;"> otros Productos: </h2>
-
 <div class="contenedor">
     <div class="product-container">
         @foreach($relatedProducts as $relatedProduct)

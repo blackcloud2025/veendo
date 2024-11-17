@@ -12,9 +12,9 @@
 
 :root {
     /* ===== Colors ===== */
-    --body-color: #a2a2a7;
+    --body-color: #f9fafb;
     --sidebar-color: #FFF;
-    --navbar-color: #365267;
+    --navbar-color: #fff;
     --cardbk-color: #f8f8f8;
     --crdbklt-color: #a9b1b6;
     --primary-color: #D5C1B6;
@@ -375,7 +375,8 @@ body.dark .home .text {
     position: relative;
     display: flex;
     background-color: var(--navbar-color);
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom-color: #18191a;
 }
 
 
@@ -391,7 +392,7 @@ body.dark .home .text {
     color: var(--primary-color-light);
     min-width: 150px;
     max-width: 500px;
-
+    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 
@@ -437,7 +438,7 @@ body.dark .home .text {
 .container-carousel {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 400px;
     background-color: #e0e0e0;
     overflow: hidden;
     background-color: var(--sidebar-color);
@@ -492,6 +493,147 @@ body.dark .home .text {
 .btn-right {
     right: 20px;
 }
+/*=======panel de producto===========*/
+
+.spacer {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+
+
+.product-panel {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--sidebar-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.containerpanel-carousel {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    background-color: var(--sidebar-color);
+    border-radius: 7px;
+    object-fit: cover
+}
+
+
+.content {
+    padding: 20px;
+}
+
+.discountPanel {
+    display: inline-block;
+    background: #ef4444;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 10px;
+}
+
+.content h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-top: 4px;
+}
+
+
+
+.product-panel .panelprice {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.5rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+.content2 {
+    padding: 20px;
+    background: var(--body-color);
+}
+
+.content2 h3 {
+    color: var(--text-color);
+}
+
+.content2 p {
+    color: var(--text-color);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.detail-box {
+    background: var(--sidebar-color);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px var(--shadow-color);
+    color: var(--text-color);
+}
+
+.content3 {
+    padding: 20px;
+}
+
+.content3 h2 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+
+
 
 
 /* ===== tarjetas de productos. ===== */
@@ -499,9 +641,6 @@ body.dark .home .text {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin: 4px;
-    padding-left: 1rem;
-    padding-right: 1rem;
     width: fit-content;
 }
 
@@ -510,11 +649,11 @@ body.dark .home .text {
     flex-wrap: wrap;
     justify-content: center;
     padding: -30px;
-    gap: 20px;
+    gap: 1px;
 }
 
 .product-card {
-    width: 200px;
+    width: 180px;
     height: 380px;
     background-color: var(--sidebar-color);
     border-radius: 10px;
@@ -528,10 +667,11 @@ body.dark .home .text {
 }
 
 .image-container img {
-    width: 180px;
+    width: 160px;
     height: 180px;
     border-radius: 10px;
     margin-bottom: 8px;
+    object-fit: cover;
 }
 
 .product-details {
@@ -583,7 +723,7 @@ body.dark .home .text {
 
 
 .product-container button {
-    width: 170px;
+    width: 150px;
     height: 25px;
     background-color: var(--body-color);
     color: var(--text-color);
@@ -601,145 +741,6 @@ body.dark .home .text {
 
 
 
-
-/* ===== trjrpod ===== */
-
-.trjrpod {
-    display: grid;
-    gap: 1px;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 3fr));
-    max-width: 100%;
-    min-width: 280px;
-    max-height: 1000px;
-    min-height: 500px;
-    box-shadow: 0px 0px 4px var(--shadow-color);
-    flex: 1 0 auto;
-    margin: 15px;
-    background-color: var(--sidebar-color);
-    border-radius: 6px;
-    cursor: default;
-
-}
-
-.trjrpod:hover {
-    box-shadow: 0px 0px 10px var(--shadow-color);
-}
-
-.trjrpod img {
-    border-radius: 7px;
-    min-width: 100px;
-    min-height: 150px;
-    width: 100%;
-    max-height: 420px;
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-
-.trjrpod .content {
-    padding: 2px;
-    height: 100%;
-    width: 100%;
-    text-align: center
-}
-
-.trjrpod .content p {
-    color: red;
-}
-
-.trjrpod .content h3 {
-    font-weight: 500;
-    color: var(--text-color);
-}
-
-.trjrpod .content a {
-    max-width: 120px;
-    min-width: 80px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
-    background-color: var(--body-color);
-    border-radius: 4px;
-    padding: 2px;
-    margin-top: 18px;
-    margin-right: 15px;
-    margin-left: 15px;
-    color: var(--toggle-color);
-}
-
-
-.trjrpod .content2 {
-    margin: 12px;
-    border-radius: 4px;
-    background: var(--body-color);
-    max-height: 1000px;
-    min-width: 80px;
-    min-height: 150px;
-    text-align: left
-}
-
-.trjrpod .content2 h3 {
-    font-weight: 500;
-    color: var(--text-color);
-    margin-bottom: 6px;
-    padding: 8px;
-}
-
-.trjrpod .content2 p {
-    color: var(--text-color);
-    margin-bottom: 2px;
-    padding: 8px;
-}
-
-
-
-/*===contenido====3*/
-.trjrpod .content3 {
-    overflow-y: auto;
-    overflow-y: scroll;
-    /* Permite el desplazamiento vertical */
-    display: inline-block;
-    border-radius: 4px;
-    background: var(--body-color);
-    max-height: 1000px;
-    min-width: 80px;
-    margin: 12px;
-    min-height: 150px;
-    text-align: left;
-}
-
-.trjrpod .content3 h3 {
-    font-weight: 500;
-    color: var(--text-color);
-    margin: 10px;
-}
-
-.trjrpod .content3 p {
-    color: var(--text-color);
-    margin: 10px;
-}
-
-.trjrpod .content3 span {
-    margin: 20px;
-    color: var(--text-color);
-}
-
-.trjrpod .content3 .colorbx {
-    background-color: var(--sidebar-color);
-    width: 90%;
-    height: 20%;
-
-    margin: 20px;
-    margin-bottom: 3px;
-    border-radius: 7px;
-}
-
-.trjrpod .content3 .txtbx {
-    background-color: var(--sidebar-color);
-    width: 90%;
-    margin: 20px;
-    border-radius: 7px;
-}
 
 /* ===== sliderbtns. ===== */
 
@@ -920,13 +921,14 @@ body.dark .home .text {
 
 /* ===== fornulario de producto ===== */
 .product-upload-form {
-    background-color: var(--footer-color);
+    background-color: var(--navbar-color);
     justify-self: auto;
-    width: calc(100% - 40px);
+    max-width: 700px;
     padding: 20px;
-    margin: 20px;
+    margin: 0 auto;
     text-align: center;
     border-radius: 6px;
+    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .product-upload-form div {
@@ -934,7 +936,7 @@ body.dark .home .text {
 }
 
 .product-upload-form label {
-    color: #FFF;
+    color: var(--text-color);
     display: block;
     margin-bottom: 6px;
 }
@@ -974,7 +976,7 @@ body.dark .home .text {
     width: 100%;
     position: absolute;
     bottom: 0;
-    background-color: var(--footer-color);
+    background-color: var(--navbar-color);
     padding: 20px 0;
 }
 
