@@ -24,7 +24,7 @@
     --text-color: #707070;
     --shadow-color: gray;
     --grad-color: radial-gradient(#988F88, #30393E);
-    --btnrbd-color: #5c5da0;
+    --btnrbd-color: blue;
     --footer-color: #365267;
 
 
@@ -65,7 +65,7 @@ body.dark {
     --text-color: #ccc;
     --shadow-color: black;
     --grad-color: radial-gradient(#002F5C, blue);
-    --btnrbd-color: transparent;
+    --btnrbd-color: blue;
     --footer-color: #242526;
 }
 
@@ -482,7 +482,7 @@ body.dark .home .text {
 .btn-left:hover,
 .btn-right:hover {
     background-color: var(--navbar-color);
-    color: #fff;
+    color: var(--btnrbd-color);
     opacity: 1;
 }
 
