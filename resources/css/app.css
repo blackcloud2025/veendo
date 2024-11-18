@@ -477,7 +477,7 @@ body.dark .home .text {
     border-radius: 999px;
     font-size: 14px;
     font-weight: 500;
-    margin: 10px 10px;
+    margin: 7px 0px;
 }
 
 .content h3 {
@@ -492,15 +492,16 @@ body.dark .home .text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 8px;
+    margin: 10px 10px;
 }
 
 .buttons {
     display: flex;
     gap: 16px;
-    margin-top: 20px;
+    margin-top: 7px;
 }
 
 .btn {
