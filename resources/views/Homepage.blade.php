@@ -2,6 +2,10 @@
 
 @section('Titulo','Home')
 
+@section('styles')
+    @vite('resources/css/slider.css')
+@endsection
+
 @section('Contenido')
 
 
@@ -65,31 +69,32 @@
             </div>
 
             <div class="product-details">
-            <p class="discount">OFF {{ $product->offer }}%</p>
-            <h3>{{ $product->name }}</h3>
-            <p class="price">Precio: ${{ $product->price }}</p>
+                <p class="discount">OFF {{ $product->offer }}%</p>
+                <h3>{{ $product->name }}</h3>
+                <p class="price">Precio: ${{ $product->price }}</p>
 
-            <form action="{{ route('product.show', ['id' => $product->id]) }}">
+                <form action="{{ route('product.show', ['id' => $product->id]) }}">
                     @csrf
                     <button type="submit">
                         <span class="text nav-text"> saber mas.</span>
                     </button>
-            </form>
+                </form>
 
-            <form action="#">
+                <form action="#">
                     <button type="submit">
                         <span class="text nav-text"> agregar.</span>
                     </button>
-            </form>
-                
-            
+                </form>
+
+
             </div>
-            
+
         </div>
         @endforeach
     </div>
 </div>
 @endsection
 
-
-
+@section('scripts')
+    @vite('resources/js/slider.js')
+@endsection

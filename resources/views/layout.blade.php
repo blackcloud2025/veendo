@@ -13,6 +13,8 @@
     <!----===== importar CSS y JS  para vite ===== -->
     @vite(['resources/css/app.css', 'resources/js/app.js',])
 
+
+    @yield('styles')
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
@@ -37,7 +39,8 @@
     @include('Components.Sidebar')
 
     @yield('Contenido')
-
+    
+    @yield('scripts')
 
 
 </body>

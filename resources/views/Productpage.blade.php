@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('Titulo','Product.')
+
+@section('styles')
+    @vite('resources/css/slider.css')
+@endsection
+
 @section('Contenido')
 <x-trjrpod
     :images="$product->images"
@@ -41,4 +46,6 @@
 @endsection
 
 
-
+@section('scripts')
+    @vite('resources/js/slider.js')
+@endsection
