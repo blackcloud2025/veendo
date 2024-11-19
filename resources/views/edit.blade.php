@@ -2,6 +2,10 @@
 
 @section('Titulo','mis ventas.')
 
+@section('styles')
+    @vite('resources/css/uploadForm.css')
+@endsection
+
 @section('Contenido')
 
 <div class="product-upload-form">
@@ -52,4 +56,8 @@
         <button type="submit">Actualizar Producto</button>
     </form>
 </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/uploadImageBox.js')
 @endsection

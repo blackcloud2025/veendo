@@ -19,6 +19,7 @@
 
     <title>@yield('Titulo')</title>
 
+    @yield('styles')
 
 
 
@@ -41,5 +42,7 @@
 
 
 </body>
+
+@yield('scripts')
 
 </html>

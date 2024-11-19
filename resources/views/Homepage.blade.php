@@ -2,6 +2,11 @@
 
 @section('Titulo','Home')
 
+
+@section('styles')
+    @vite('resources/css/slider.css')
+@endsection
+
 @section('Contenido')
 
 
@@ -89,6 +94,10 @@
         @endforeach
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/slider.js')
 @endsection
 
 
