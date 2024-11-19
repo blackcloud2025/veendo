@@ -43,15 +43,16 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric',
-            'offer' => 'numeric',
+            'offer' => 'nullable|numeric', // Permite que la oferta sea nula
             'category' => 'required|string|max:255',
-            'color' => 'string|max:255',
-            'size' => 'string|max:255',
-            'model' => 'string|max:255',
-            'version' => 'string|max:255',
+            'color' => 'nullable|string|max:255', // Permite que el color sea nulo
+            'size' => 'nullable|string|max:255', // Permite que el tamaño sea nulo
+            'model' => 'nullable|string|max:255', // Permite que el modelo sea nulo
+            'version' => 'nullable|string|max:255', // Permite que la versión sea nula
             'images' => 'required|array|max:10',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        
 
         if ($validador->fails()) {
             return response()->json([
