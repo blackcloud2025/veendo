@@ -1,3 +1,5 @@
+
+
 .containerform {
     min-height: 100vh;
     padding: 2rem;
@@ -135,6 +137,9 @@ textarea.form-control {
     font-size: 0.75rem;
 }
 
+
+
+/*=======================imagen===================*/
 #imagePreview {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -151,7 +156,7 @@ textarea.form-control {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 7px;
 }
 
 .remove-image {
@@ -168,14 +173,27 @@ textarea.form-control {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Cambiamos la visibilidad inicial */
     opacity: 0;
-    transition: opacity 0.15s ease-in-out;
+    visibility: hidden;
+    transition: all 0.15s ease-in-out;
+    /* Aseguramos que esté por encima de la imagen */
+    z-index: 1;
 }
 
+/* Modificamos el hover para que funcione correctamente */
 .preview-item:hover .remove-image {
     opacity: 1;
+    visibility: visible;
 }
 
+/* Agregamos un efecto de hover en el botón mismo */
+.remove-image:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+/*=======noton de envio de archivo===========*/
 .submit-button {
     background-color: #2563eb;
     color: white;
