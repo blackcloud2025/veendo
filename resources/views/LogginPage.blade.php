@@ -3,7 +3,7 @@
 @section('Titulo','loggin.')
 
 @section('styles')
-    @vite('resources/css/logginBehaviour.css')
+    @vite('resources/css/loggin.css')
 @endsection
 
 @section('Contenido')

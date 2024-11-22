@@ -9,7 +9,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/slider.css',
                 'resources/css/uploadForm.css',
-                'resources/css/logginBehaviour.css',
+                'resources/css/loggin.css',
 
                 //scripts
                 'resources/js/app.js',
