@@ -1,4 +1,4 @@
-/* ===== slider ===== */
+/* ====================== slider ============================ */
 
 .container-carousel {
     position: relative;
@@ -26,6 +26,8 @@
     object-fit: cover;
 }
 
+
+/*===============botones=================*/
 .btn-left,
 .btn-right {
     display: flex;
@@ -68,6 +70,8 @@
     right: 10px;
   }
 
+
+  /*=================puntos clicables==============*/
   .dots-container {
     position: absolute;
     bottom: 20px;
