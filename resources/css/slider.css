@@ -64,37 +64,34 @@
 
 .btn-left {
     left: 10px;
-  }
+}
 
-  .btn-right {
+.btn-right {
     right: 10px;
-  }
+}
 
 
-  /*=================puntos clicables==============*/
-  .dots-container {
+/*=================puntos clicables==============*/
+.dots-container {
     position: absolute;
     bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 10px;
-    
-  }
 
+}
 
-  .dot {
+.dot {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: background-color 0.3s;
-    border: solid 1px rgb(22, 21, 21);
-  }
+    border: solid 1px var(--text-color);
+}
 
-  .dot.active {
+.dot.active {
     background-color: var(--navbar-color);
-  }
-
-  
+}
