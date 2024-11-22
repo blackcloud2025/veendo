@@ -9,8 +9,10 @@
                     </section>
                     @endforeach
                 </div>
+
                 <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
                 <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
+                <div class="dots-container"></div>
             </div>
 
             <div>
@@ -71,6 +73,3 @@
     </div>
 </div>
 </div>
-
-
-   

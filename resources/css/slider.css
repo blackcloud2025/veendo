@@ -58,3 +58,39 @@
 .btn-right {
     right: 20px;
 }
+
+
+.btn-left {
+    left: 10px;
+  }
+
+  .btn-right {
+    right: 10px;
+  }
+
+  .dots-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+  }
+
+
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: solid 1px rgb(22, 21, 21);
+  }
+
+  .dot.active {
+    background-color: var(--navbar-color);
+  }
+
+  
