@@ -94,6 +94,7 @@
             <div class="submit-wrapper">
                 <button type="submit" class="submit-button">Subir Producto</button>
             </div>
+            
         </form>
     </div>
 </div>
