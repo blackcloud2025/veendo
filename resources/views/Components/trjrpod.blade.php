@@ -2,6 +2,7 @@
     <div class="product-panel">
         <div class="content">
             <div class="containerpanel-carousel">
+                
                 <div class="carruseles" id="slider">
                     @foreach($images as $image)
                     <section class="slider-section">

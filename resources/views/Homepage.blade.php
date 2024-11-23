@@ -10,7 +10,7 @@
 @section('Contenido')
 
 
-<!---carrusel-->
+<!------------------------------------carrusel---------------------------------------------------------->
 
 <div class="container-carousel">
     <div class="carruseles" id="slider">
@@ -34,7 +34,7 @@
 
 
 
-<!--SsliderBtns.-->
+<!----------------------------------------------SsliderBtns.---------------------------------------------->
 <div class="SliderBtns">
 
     <div class="Btn">
@@ -59,7 +59,7 @@
 
 </div>
 
-
+<!------------------------------------display de productos en la pagina----------------------------------->
 <div class="contenedor">
     <div class="product-container">
         @foreach($products as $product)

@@ -3,7 +3,7 @@
 @section('Titulo','Product.')
 
 @section('styles')
-    @vite('resources/css/slider.css')
+@vite('resources/css/slider.css')
 @endsection
 
 @section('Contenido')
@@ -20,7 +20,7 @@
     :version="$product->version"
     liga="Home"
     descriptionTitle="Descripcion:">
-            
+
 </x-trjrpod>
 
 
@@ -28,16 +28,25 @@
     <div class="product-container">
         @foreach($relatedProducts as $relatedProduct)
         <div class="product-card">
+
             <div class="image-container">
                 @if($relatedProduct->images->isNotEmpty())
                 <img class="product-image" src="{{ Storage::url($relatedProduct->images->first()->image_path) }}" alt="{{ $relatedProduct->name }}">
                 @endif
             </div>
+
             <div class="product-details">
                 <p class="discount">OFF {{ $relatedProduct->offer }}%</p>
                 <h3>{{ $relatedProduct->name }}</h3>
                 <p class="price">Precio: ${{ $relatedProduct->price }}</p>
-                <a href="{{ route('product.show', $relatedProduct->id) }}">Ver</a>
+
+                <form action="{{ route('product.show', ['id' => $relatedProduct->id]) }}">
+                    @csrf
+                    <button type="submit">
+                        <span class="text nav-text"> saber mas.</span>
+                    </button>
+                </form>
+
             </div>
         </div>
         @endforeach
@@ -46,8 +55,5 @@
 @endsection
 
 @section('scripts')
-    @vite('resources/js/slider.js')
+@vite('resources/js/slider.js')
 @endsection
-
-
-
