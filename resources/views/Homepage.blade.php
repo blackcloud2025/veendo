@@ -10,7 +10,7 @@
 @section('Contenido')
 
 
-<!------------------------------------carrusel---------------------------------------------------------->
+<!-------------------carrusel---------------------------------------------------------->
 
 <div class="container-carousel">
     <div class="carruseles" id="slider">
@@ -34,32 +34,38 @@
 
 
 
-<!----------------------------------------------SsliderBtns.---------------------------------------------->
+<!-----------------------SsliderBtns.--------------------------------------------------------------->
 <div class="SliderBtns">
 
-    <div class="Btn">
+    <div class="Btn news">
+       <i class='bx bxs-news'></i>
         <h3>Recien visto.</h3>
         <a href="#">Ver más.</a>
     </div>
 
-    <div class="Btn">
+
+
+    <div class="Btn payments">
+        <i class='bx bx-money-withdraw' ></i>
         <h3>Mis pagos.</h3>
         <a href="#">Ver más.</a>
     </div>
 
-    <div class="Btn">
-        <h3>Lo más vendido.</h3>
+    <div class="Btn hot">
+        <i class='bx bxs-hot' ></i>
+        <h3>más vendido.</h3>
         <a href="#">Ver más.</a>
     </div>
 
-    <div class="Btn">
-        <h3>En liquidación.</h3>
+    <div class="Btn offer">
+        <i class='bx bxs-offer' ></i>  
+        <h3>liquidación.</h3>
         <a href="#">Ver más.</a>
     </div>
 
 </div>
 
-<!------------------------------------display de productos en la pagina----------------------------------->
+
 <div class="contenedor">
     <div class="product-container">
         @foreach($products as $product)

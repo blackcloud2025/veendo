@@ -627,12 +627,18 @@ body.dark .home .text {
 /* Modificación para el título del producto */
 .product-card h3 {
     color: var(--text-color);
-    white-space: nowrap;        /* Evita saltos de línea */
-    overflow: hidden;           /* Oculta el contenido que se desborda */
-    text-overflow: ellipsis;    /* Agrega puntos suspensivos */ 
-    padding: 0 5px;             /* Agrega un pequeño padding */
-    margin: 2px 0;             /* Ajusta el margen */
-    max-width: 100%;            /* Asegura que no sobrepase el ancho del contenedor */
+    white-space: nowrap;
+    /* Evita saltos de línea */
+    overflow: hidden;
+    /* Oculta el contenido que se desborda */
+    text-overflow: ellipsis;
+    /* Agrega puntos suspensivos */
+    padding: 0 5px;
+    /* Agrega un pequeño padding */
+    margin: 2px 0;
+    /* Ajusta el margen */
+    max-width: 100%;
+    /* Asegura que no sobrepase el ancho del contenedor */
 }
 
 .discount {
@@ -681,63 +687,99 @@ body.dark .home .text {
     background-color: red;
 }
 
-
-
-
-/* ===== sliderbtns. ===== */
-
+/*---------sliderbotons-------------------------------------------------*/
 .SliderBtns {
     margin-top: 10px;
     margin-left: 1.5%;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
+    align-items: center;
 }
 
 .SliderBtns::-webkit-scrollbar {
     display: none;
 }
 
-
 .Btn {
     background: var(--sidebar-color);
-    width: 100%;
-    height: 100px;
-    width: 395px;
+    height: 70px;
+    width: 300px;
     box-shadow: 0px 0px 4px var(--shadow-color);
     border-radius: 6px;
     flex: 1 0 auto;
-    align-items: center;
-    margin: 1%;
+    margin:  3px;
     margin-bottom: 20px;
     cursor: default;
-    padding: 4px;
-    text-align: center;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .Btn:hover {
     box-shadow: 0px 0px 10px var(--shadow-color);
 }
 
-.Btn h3 {
-    font-weight: 500;
-    color: var(--text-color);
-    margin-bottom: 10px;
+.Btn i {
+    font-size: 40px; /* Icono más grande */
+    min-width: 70px; /* Ancho fijo para el icono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CSS correspondiente */
+.Btn.news i {
+    color: #3B82F6; /* Azul */
+}
+
+.Btn.payments i {
+    color: #10B981; /* Verde */
+}
+
+.Btn.hot i {
+    color: #F97316; /* Naranja */
+}
+
+.Btn.offer i {
+    color: #8B5CF6; /* Morado */
 }
 
 
+.Btn h3 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .Btn a {
-    
     font-weight: 500;
     text-decoration: none;
     display: inline-block;
     background-color: var(--primary-color-light2);
     border-radius: 7px;
-    padding: 7px;
-    margin-bottom: 10px;
+    padding: 7px 15px;
+    margin: 0;
     color: var(--text-color);
+    white-space: nowrap;
 }
+
+/* Contenedor para demostración */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* ======================== ver a qu px con esto =========================*/
 
 .Contenedor {
     margin-top: 20px;
