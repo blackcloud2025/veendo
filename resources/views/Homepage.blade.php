@@ -4,7 +4,7 @@
 
 
 @section('styles')
-    @vite('resources/css/slider.css')
+@vite('resources/css/slider.css')
 @endsection
 
 @section('Contenido')
@@ -39,7 +39,7 @@
 <div class="SliderBtns">
 
     <div class="Btn news">
-       <i class='bx bxs-news'></i>
+        <i class='bx bxs-news'></i>
         <h3>Recien visto.</h3>
         <a href="#">Ver más.</a>
     </div>
@@ -47,19 +47,19 @@
 
 
     <div class="Btn payments">
-        <i class='bx bx-money-withdraw' ></i>
+        <i class='bx bx-money-withdraw'></i>
         <h3>Mis pagos.</h3>
         <a href="#">Ver más.</a>
     </div>
 
     <div class="Btn hot">
-        <i class='bx bxs-hot' ></i>
+        <i class='bx bxs-hot'></i>
         <h3>más vendido.</h3>
         <a href="#">Ver más.</a>
     </div>
 
     <div class="Btn offer">
-        <i class='bx bxs-offer' ></i>  
+        <i class='bx bxs-offer'></i>
         <h3>liquidación.</h3>
         <a href="#">Ver más.</a>
     </div>
@@ -80,26 +80,21 @@
             </div>
 
             <div class="product-details">
-            <p class="discount">OFF {{ $product->offer }}%</p>
-            <h3>{{ $product->name }}</h3>
-            <p class="price">Precio: ${{ $product->price }}</p>
+                <p class="discount">OFF {{ $product->offer }}%</p>
+                <h3>{{ $product->name }}</h3>
+                <p class="price">Precio: ${{ $product->price }}</p>
 
-            <form action="{{ route('product.show', ['id' => $product->id]) }}">
-                    @csrf
-                    <button type="submit">
-                        <span class="text nav-text"> saber mas.</span>
-                    </button>
-            </form>
+                <a href="{{ route('product.show', ['id' => $product->id]) }}" class="btn">
+                    <span class="text nav-text">Saber más</span>
+                </a>
 
-            <form action="#">
-                    <button type="submit">
-                        <span class="text nav-text"> agregar.</span>
-                    </button>
-            </form>
-                
-            
+                <a href="#" class="btn">
+                    <span class="text nav-text">Saber más</span>
+                </a>
+
+
             </div>
-            
+
         </div>
         @endforeach
     </div>
@@ -107,8 +102,5 @@
 @endsection
 
 @section('scripts')
-    @vite('resources/js/slider.js')
+@vite('resources/js/slider.js')
 @endsection
-
-
-

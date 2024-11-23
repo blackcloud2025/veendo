@@ -654,13 +654,14 @@ body.dark .home .text {
 }
 
 .product-container a {
-    background-color: var(--body-color);
+    background-color: var(--primary-color-light2);
     color: var(--text-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    margin: 5px;
+    margin: 3px;
+    padding: 2px
 }
 
 .product-container a:hover {

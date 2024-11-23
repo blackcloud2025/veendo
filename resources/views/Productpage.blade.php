@@ -39,13 +39,10 @@
                 <p class="discount">OFF {{ $relatedProduct->offer }}%</p>
                 <h3>{{ $relatedProduct->name }}</h3>
                 <p class="price">Precio: ${{ $relatedProduct->price }}</p>
-
-                <form action="{{ route('product.show', ['id' => $relatedProduct->id]) }}">
-                    @csrf
-                    <button type="submit">
-                        <span class="text nav-text"> saber mas.</span>
-                    </button>
-                </form>
+                
+                <a href="{{ route('product.show', ['id' => $relatedProduct->id]) }}" class="btn">
+                    <span class="text nav-text">Saber más</span>
+                </a>
 
             </div>
         </div>
