@@ -689,12 +689,14 @@ body.dark .home .text {
 
 /*---------sliderbotons-------------------------------------------------*/
 .SliderBtns {
-    margin-top: 10px;
-    margin-left: 1.5%;
+    margin-top: 0px;
+    width: 100%;
+   padding-top: 17px;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
     align-items: center;
+    
 }
 
 .SliderBtns::-webkit-scrollbar {
@@ -729,22 +731,38 @@ body.dark .home .text {
     align-items: center;
 }
 
-/* CSS correspondiente */
+/* CSS correspondiente colores */ 
 .Btn.news i {
     color: #3B82F6; /* Azul */
 }
+
+.news:hover i {
+    filter: drop-shadow(0 0 7px rgba(3, 3, 252, 0.603)); /* Sombra azul */
+  }
 
 .Btn.payments i {
     color: #10B981; /* Verde */
 }
 
+.payments:hover i {
+    filter: drop-shadow(0 0 7px rgb(169, 172, 25)); /* Sombra verde */
+  }
+
 .Btn.hot i {
     color: #F97316; /* Naranja */
 }
 
+.hot:hover i {
+    filter: drop-shadow(0 0 7px rgb(251, 255, 0)); /* Sombra amarilla */
+  }
+
 .Btn.offer i {
-    color: #8B5CF6; /* Morado */
+    color: #db0909; /* rojo */
 }
+
+.offer:hover i {
+    filter: drop-shadow(0 0 7px rgba(255, 0, 0, 0.719)); /* Sombra naranja */
+  }
 
 
 .Btn h3 {
@@ -779,7 +797,6 @@ body.dark .home .text {
 }
 
 
-/* ======================== ver a qu px con esto =========================*/
 
 .Contenedor {
     margin-top: 20px;
