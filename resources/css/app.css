@@ -654,13 +654,14 @@ body.dark .home .text {
 }
 
 .product-container a {
+    max-height: 25px;
     background-color: var(--primary-color-light2);
     color: var(--text-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    margin: 3px;
+    margin: 4px;
     padding: 2px
 }
 
