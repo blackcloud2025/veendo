@@ -114,7 +114,7 @@ class ProductController extends Controller
         return redirect()->route('misventas')->with('success', 'Producto eliminado correctamente!');
     }
 
-    //editar producto///////////////////////////////////////////////////////////
+    ///////////////////////editar producto///////////////////////////////////////////////////////////
     public function edit($id)
     {
         $product = Product::findOrFail($id);
