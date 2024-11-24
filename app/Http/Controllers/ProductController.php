@@ -167,6 +167,6 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('misventas')->with('success', 'Producto actualizado con éxito');
+        return redirect()->route('misventas')->with('success', 'Producto actualizado correctamente!');
     }
 }

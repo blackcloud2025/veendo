@@ -32,7 +32,27 @@ modeSwitch.addEventListener("click", () => {
 
 
 
+//pop up notificacion
 
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Assuming successful form submission triggers a 'productUpdated' event
+        document.addEventListener('productUpdated', function() {
+
+            // Create a new div element for the notification
+            const notification = document.createElement('div');
+            notification.classList.add('notification', 'success');
+            notification.textContent = 'Producto actualizado correctamente!';
+
+            // Append the notification to the body
+            document.body.appendChild(notification);
+
+            // Automatically remove the notification after a few seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        });
+    });
 
 
 
