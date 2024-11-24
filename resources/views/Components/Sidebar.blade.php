@@ -81,7 +81,7 @@
                         @guest
                         <a href="{{route('invitacion')}}">
                             <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notificaciones</span>
+                            <span class="text nav-text">alertas</span>
                         </a>
                         @endguest
 
