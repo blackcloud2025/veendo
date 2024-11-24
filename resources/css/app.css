@@ -676,7 +676,7 @@ body.dark .home .text {
 .product-container button {
     width: 150px;
     height: 25px;
-    background-color: #1d4ed8;
+    background-color: var(--primary-color-light2);
     color: white;
     border: none;
     border-radius: 5px;
