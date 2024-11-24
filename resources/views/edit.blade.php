@@ -10,14 +10,16 @@
 
 <div class="containerform">
     <div class="form-wrapper">
-        <h1 style="font-size: 24px; color: var(--text-color); margin-bottom: 1.5rem; font-weight: bold;">editar producto.</h1>
+        <h1 class="page-title">editar producto.</h1>
         <form action="{{ route('product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
+            <div class="form-grid">
             <div class="form-group full-width">
                 <label class="form-label" for="name">Nombre</label>
-                <input class="form-control type=" text" name="name" value="{{ $product->name }}" required>
+                <input class="form-control type="text" name="name" value="{{ $product->name }}" required>
             </div>
+
             <div class="form-group full-width">
                 <label class="form-label" for="description">Descripción</label>
                 <textarea class="form-control" name="description" required>{{ $product->description }}</textarea>
@@ -73,25 +75,16 @@
                     <p class="upload-text"><span>Haz clic para subir</span> o arrastra y suelta</p>
                     <p class="upload-hint">PNG, JPG, GIF hasta 10 MB</p>
 
-                    <input type="file" id="images" name="images[]" multiple accept="image/*" required style="opacity: 0; position: absolute;">
+                    <input type="file" id="images" name="images[]" multiple accept="image/*" style="opacity: 0; position: absolute;">
                     <div id="imagePreview"></div>
                 </div>
             </div>
-            
+            </div>
             
             <div class="submit-wrapper">
                 <button class="submit-button" type="submit">Actualizar Producto</button>
             </div>
             
-
-            <div id="notification" class="notification">
-                <div class="notification-content">
-                <span class="notification-message"></span>
-                <span class="notification-close">&times;</span>
-            </div>
-            </div>
-
-            <!--crear alerta o pop up para cuando se edite un producto-->
     </div>
     </form>
 </div>
