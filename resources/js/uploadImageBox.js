@@ -4,6 +4,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagePreview = document.getElementById('imagePreview');
     let allFiles = []; // Arreglo para almacenar todos los archivos seleccionados
 
+    // Función de compresión de imágenes
+    function compressImage(file, { maxWidth = 800, maxHeight = 800, quality = 0.8 }) {
+        return new Promise((resolve, reject) => {
+            if (!file || !file.type.startsWith('image/')) {
+                reject(new Error('Archivo inválido'));
+                return;
+            }
+
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+            
+            img.onload = () => {
+                URL.revokeObjectURL(img.src);
+                
+                let width = img.width;
+                let height = img.height;
+                
+                if (width > maxWidth) {
+                    height = Math.round((height * maxWidth) / width);
+                    width = maxWidth;
+                }
+                
+                if (height > maxHeight) {
+                    width = Math.round((width * maxHeight) / height);
+                    height = maxHeight;
+                }
+                
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                
+                canvas.toBlob(
+                    (blob) => {
+                        // Crear un nuevo File objeto a partir del Blob
+                        const compressedFile = new File([blob], file.name, {
+                            type: 'image/jpeg',
+                            lastModified: Date.now()
+                        });
+                        resolve(compressedFile);
+                    },
+                    'image/jpeg',
+                    quality
+                );
+            };
+            
+            img.onerror = reject;
+        });
+    }
+
     // Prevent default drag behaviors
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         dropZone.addEventListener(eventName, preventDefaults, false);
@@ -30,72 +82,113 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
     }
 
-    function highlight() {
+    function highlight(e) {
+        preventDefaults(e);
         dropZone.classList.add('highlight');
     }
 
-    function unhighlight() {
+    function unhighlight(e) {
+        preventDefaults(e);
         dropZone.classList.remove('highlight');
     }
 
-    function handleDrop(e) {
+    async function handleDrop(e) {
+        preventDefaults(e);
         const dt = e.dataTransfer;
-        const files = Array.from(dt.files);
+        const droppedFiles = Array.from(dt.files).filter(file => 
+            file.type.startsWith('image/') && 
+            ['image/jpeg', 'image/png', 'image/gif'].includes(file.type)
+        );
+        
+        if (droppedFiles.length === 0) {
+            alert('Por favor, arrastra solo archivos de imagen (JPG, PNG, GIF)');
+            return;
+        }
 
-        // Add dropped files to the list of all files
-        allFiles = allFiles.concat(files);
+        try {
+            // Comprimir las imágenes antes de agregarlas
+            const compressedFiles = await Promise.all(
+                droppedFiles.map(file => compressImage(file, {
+                    maxWidth: 800,
+                    maxHeight: 800,
+                    quality: 0.8
+                }))
+            );
 
-        // Update file input files for form submission
-        updateFileInput();
+            // Añadir a la lista existente
+            allFiles = [...allFiles, ...compressedFiles];
 
-        handleFiles(allFiles);
+            // Validar límite de 10 imágenes
+            if (allFiles.length > 10) {
+                allFiles = allFiles.slice(0, 10);
+                alert('Solo se permiten hasta 10 imágenes. Se han seleccionado las primeras 10.');
+            }
+
+            // Actualizar input file y mostrar previsualizaciones
+            await updateFileInput();
+            handleFiles(allFiles);
+        } catch (error) {
+            console.error('Error al procesar las imágenes:', error);
+            alert('Hubo un error al procesar algunas imágenes');
+        }
     }
 
-    function handleFileSelect(e) {
-        const files = Array.from(e.target.files);
+    async function handleFileSelect(e) {
+        const selectedFiles = Array.from(e.target.files).filter(file => 
+            file.type.startsWith('image/') && 
+            ['image/jpeg', 'image/png', 'image/gif'].includes(file.type)
+        );
 
-        // Add selected files to the list of all files
-        allFiles = allFiles.concat(files);
+        if (selectedFiles.length === 0) {
+            alert('Por favor, selecciona solo archivos de imagen (JPG, PNG, GIF)');
+            return;
+        }
 
-        // Update file input files for form submission
-        updateFileInput();
+        try {
+            const compressedFiles = await Promise.all(
+                selectedFiles.map(file => compressImage(file, {
+                    maxWidth: 800,
+                    maxHeight: 800,
+                    quality: 0.8
+                }))
+            );
 
-        handleFiles(allFiles);
+            allFiles = [...allFiles, ...compressedFiles];
+
+            if (allFiles.length > 10) {
+                allFiles = allFiles.slice(0, 10);
+                alert('Solo se permiten hasta 10 imágenes. Se han seleccionado las primeras 10.');
+            }
+
+            await updateFileInput();
+            handleFiles(allFiles);
+        } catch (error) {
+            console.error('Error al procesar las imágenes:', error);
+            alert('Hubo un error al procesar algunas imágenes');
+        }
     }
 
-    function updateFileInput() {
+    async function updateFileInput() {
         const dataTransfer = new DataTransfer();
-        allFiles.forEach(file => dataTransfer.items.add(file));
-        fileInput.files = dataTransfer.files;
+        
+        allFiles.forEach(file => {
+            if (file instanceof File) {
+                dataTransfer.items.add(file);
+            }
+        });
+
+        if (fileInput) {
+            fileInput.files = dataTransfer.files;
+        }
     }
 
     function handleFiles(files) {
-        // Check file count
-        if (files.length > 10) {
-            alert('Solo puedes subir un máximo de 10 imágenes');
-            allFiles = allFiles.slice(0, 10); // Limitar a 10 archivos
-            updateFileInput();
-        }
-
         // Clear previous previews
         imagePreview.innerHTML = '';
 
         // Create previews for each file
-        allFiles.forEach(file => {
-            // Validate file type and size
-            if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-                alert('Solo se permiten archivos PNG, JPG y GIF');
-                allFiles = allFiles.filter(f => f !== file); // Eliminar archivo inválido
-                updateFileInput();
-                return;
-            }
-
-            if (file.size > 10 * 1024 * 1024) { // 10MB
-                alert('El archivo es demasiado grande. Máximo 10MB');
-                allFiles = allFiles.filter(f => f !== file); // Eliminar archivo demasiado grande
-                updateFileInput();
-                return;
-            }
+        files.forEach((file, index) => {
+            if (!file || !file.type.startsWith('image/')) return;
 
             const reader = new FileReader();
             reader.onload = (e) => {
@@ -105,16 +198,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 div.innerHTML = `
                     <img src="${e.target.result}" class="preview-image">
                     <button type="button" class="remove-image">×</button>
+                    <div class="file-info">
+                        <small>${file.name} (${(file.size / 1024).toFixed(2)} KB)</small>
+                    </div>
                 `;
 
                 div.querySelector('.remove-image').onclick = function() {
-                    allFiles = allFiles.filter(f => f !== file); // Eliminar archivo de la lista
+                    allFiles = allFiles.filter(f => f !== file);
                     div.remove();
                     updateFileInput();
                 };
 
                 imagePreview.appendChild(div);
             };
+
             reader.readAsDataURL(file);
         });
     }

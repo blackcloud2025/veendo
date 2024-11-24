@@ -716,7 +716,7 @@ body.dark .home .text {
     margin:  3px;
     margin-bottom: 20px;
     cursor: default;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     align-items: center;
     position: relative;
@@ -728,7 +728,7 @@ body.dark .home .text {
 
 .Btn i {
     font-size: 40px; /* Icono más grande */
-    min-width: 70px; /* Ancho fijo para el icono */
+    min-width: 50px; /* Ancho fijo para el icono */
     display: flex;
     justify-content: center;
     align-items: center;
