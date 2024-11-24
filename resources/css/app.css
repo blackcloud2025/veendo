@@ -677,7 +677,7 @@ body.dark .home .text {
     width: 150px;
     height: 25px;
     background-color: var(--primary-color-light2);
-    color: white;
+    color: var(--text-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -1017,7 +1017,7 @@ body.dark .home .text {
 }
 
 .notification-content.success {
-    background-color: var(--primary-color-light2);
+    background-color: #2563eb;
     color: white;
 }
 
