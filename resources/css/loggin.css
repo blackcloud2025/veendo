@@ -3,24 +3,33 @@
 
 
 .container-form {
+    margin-top:30px;
     justify-self: center;
     display: flex;
     border-radius: 6px;
-    box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+    box-shadow: 0px 0px 4px var(--shadow-color);
     height: 500px;
     max-width: 100%;
     transition: all 1s ease;
-    margin: 10px;
+   
+    
 }
+
+.login {
+    max-width: 725px; /* Ajusta el ancho según sea necesario */
+}
+
 
 .information {
     width: 40%;
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: var(--crdbklt-color);
+    background-color: var(--body-color);
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+    justify-items: center;
+
 }
 
 .info-childs {
@@ -29,8 +38,9 @@
 }
 
 .info-childs h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: var(--text-color);
+    
 }
 
 .info-childs p {
@@ -39,13 +49,14 @@
 }
 
 .info-childs input {
-    background-color: var(--btnrbd-color);
-    outline: none;
-    border: solid 2px #9191bd;
+    background-color: #9191bd;
+    color: #fff;
     border-radius: 6px;
-    padding: 10px 20px;
-    color: #FFF;
+    border: none;
+    padding: 10px 15px;
     cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
     transition: background-color .3s ease;
 }
 
@@ -62,7 +73,7 @@
     justify-content: center;
     width: 60%;
     text-align: center;
-    background-color: var(--cardbk-color);
+    background-color: var(--navbar-color);
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
@@ -145,6 +156,7 @@
 
 .hide {
     position: absolute;
+    justify-self: center;
     transform: translateY(-300%);
 }
 
@@ -182,4 +194,40 @@
 
 .form .error {
     outline: solid 2px #9d2222;
+}
+
+
+
+/*===================RESPONSIVE FORM====================================*/
+
+
+
+@media screen and (max-width:725px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container-form {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .information {
+        width: 100%;
+        padding: 20px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0;
+    }
+
+    .form-information {
+        width: 100%;
+        padding: 20px;
+        border-bottom-left-radius: 6px;
+        border-top-right-radius: 0;
+    }
+
+
+
 }

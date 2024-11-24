@@ -43,7 +43,7 @@
 <div class="container-form login hide">
     <div class="information">
         <div class="info-childs">
-            <h2>¡¡Bienvenido nuevamente!!</h2>
+            <h2>¡¡Bienvenido <br>de<br> nuevo!!</h2>
             <p>Para unirte a nuestra comunidad por favor Inicie Sesión con sus datos.</p>
             <input type="button" value="Registrarse" id="sign-up">
         </div>
