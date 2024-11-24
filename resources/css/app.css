@@ -1022,7 +1022,7 @@ body.dark .home .text {
 }
 
 .notification-content.error {
-    background-color: #EF4444;
+    background-color: #ff0000;
     color: white;
 }
 
