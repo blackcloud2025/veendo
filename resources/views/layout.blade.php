@@ -1,4 +1,4 @@
-<!-- Html-->
+
 <!-- nuevo html 1.03. -->
 <!-- Coding by Saul H rodriguez. -->
 <!DOCTYPE html>
@@ -27,6 +27,28 @@
 
 <body>
 
+
+
+@if(session()->has('success'))
+        <div id="notification" class="notification" role="alert">
+            <div class="notification-content success">
+                <span class="notification-message">{{ session('success') }}</span>
+                <span class="notification-close">&times;</span>
+            </div>
+        </div>
+    @endif
+
+    @if(session()->has('error'))
+        <div id="notification" class="notification" role="alert">
+            <div class="notification-content error">
+                <span class="notification-message">{{ session('error') }}</span>
+                <span class="notification-close">&times;</span>
+            </div>
+        </div>
+    @endif
+
+
+
     <script>
         //obtener modo actual
         if (localStorage.getItem('dark-mode') == 'true') {
@@ -39,6 +61,7 @@
 
     @yield('Contenido')
 
+    
 
 
 </body>

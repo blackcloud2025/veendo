@@ -84,11 +84,12 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('product.show', $product->id);
+        return redirect()->route('product.show', $product->id)->with('success', 'Producto actualizado correctamente!');
+        
     }
 
 
-    //destruir producto
+    //destruir producto/////////////////////////////////////////
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
@@ -103,18 +104,17 @@ class ProductController extends Controller
             ], 403);
         }
 
-        // Eliminar las imágenes asociadas al producto
+        // Eliminar las imágenes asociadas al producto//
         foreach ($product->images as $image) {
             Storage::disk('public')->delete($image->image_path);
             $image->delete();
         }
 
         $product->delete();
-        return redirect()->route('misventas');
-        //return response()->json(['message' => 'Producto eliminado con éxito']);
+        return redirect()->route('misventas')->with('success', 'Producto eliminado correctamente!');
     }
 
-    //editar producto
+    //editar producto///////////////////////////////////////////////////////////
     public function edit($id)
     {
         $product = Product::findOrFail($id);
@@ -144,8 +144,8 @@ class ProductController extends Controller
             'size' => 'nullable|string|max:255',
             'model' => 'nullable|string|max:255',
             'version' => 'nullable|string|max:255',
-            'images' => 'array|max:10',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images' => 'nullable|array|max:10',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($validador->fails()) {

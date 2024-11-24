@@ -77,9 +77,18 @@
                     <div id="imagePreview"></div>
                 </div>
             </div>
-
+            
+            
             <div class="submit-wrapper">
                 <button class="submit-button" type="submit">Actualizar Producto</button>
+            </div>
+            
+
+            <div id="notification" class="notification">
+                <div class="notification-content">
+                <span class="notification-message"></span>
+                <span class="notification-close">&times;</span>
+            </div>
             </div>
 
             <!--crear alerta o pop up para cuando se edite un producto-->

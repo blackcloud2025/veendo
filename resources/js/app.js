@@ -1,4 +1,6 @@
 
+
+
 const body = document.querySelector('body'),
     sidebar = body.querySelector('nav'),
     toggle = body.querySelector(".toggle"),
@@ -32,32 +34,36 @@ modeSwitch.addEventListener("click", () => {
 
 
 
-//pop up notificacion
+//pop up notificacion////////////////////////////////////////////////////////
 
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    initializeNotifications();
+});
 
-        // Assuming successful form submission triggers a 'productUpdated' event
-        document.addEventListener('productUpdated', function() {
-
-            // Create a new div element for the notification
-            const notification = document.createElement('div');
-            notification.classList.add('notification', 'success');
-            notification.textContent = 'Producto actualizado correctamente!';
-
-            // Append the notification to the body
-            document.body.appendChild(notification);
-
-            // Automatically remove the notification after a few seconds
+function initializeNotifications() {
+    const notifications = document.querySelectorAll('.notification');
+    
+    notifications.forEach(notification => {
+        if (notification) {
+            // Auto-hide after 3 seconds
             setTimeout(() => {
-                notification.remove();
+                hideNotification(notification);
             }, 3000);
-        });
+
+            // Close button functionality
+            const closeButton = notification.querySelector('.notification-close');
+            if (closeButton) {
+                closeButton.addEventListener('click', () => {
+                    hideNotification(notification);
+                });
+            }
+        }
     });
+}
 
-
-
-
-
-
-
-
+function hideNotification(notification) {
+    notification.style.animation = 'slideOut 0.5s ease-in-out';
+    setTimeout(() => {
+        notification.remove();
+    }, 500);
+}
