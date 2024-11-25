@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let allFiles = []; // Arreglo para almacenar todos los archivos seleccionados
 
     // Función de compresión de imágenes
-    function compressImage(file, { maxWidth = 800, maxHeight = 800, quality = 0.8 }) {
+    function compressImage(file, { maxWidth = 740, maxHeight = 650, quality = 0.8 }) {
         return new Promise((resolve, reject) => {
             if (!file || !file.type.startsWith('image/')) {
                 reject(new Error('Archivo inválido'));
