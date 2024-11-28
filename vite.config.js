@@ -5,11 +5,12 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                //stiles
+                //styles
                 'resources/css/app.css',
                 'resources/css/slider.css',
                 'resources/css/uploadForm.css',
                 'resources/css/loggin.css',
+                'resources/css/payment.css',
 
                 //scripts
                 'resources/js/app.js',
