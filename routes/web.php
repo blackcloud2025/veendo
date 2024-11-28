@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\StripePaymentController;
 
 Route::get('/', function () {
     $products = Product::with('images')
@@ -64,3 +64,10 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
 
+
+
+Route::get('/payment', function () {
+    return view('payment');
+});
+
+Route::post('/process-payment', [StripePaymentController::class, 'processPayment'])->name('process.payment');
