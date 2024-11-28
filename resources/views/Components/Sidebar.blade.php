@@ -1,14 +1,40 @@
 <!---barra superior navbar-->
 
+
 <div class="BarraBusqueda">
-    <li class="search-box1">
-        <ul class='bx bx-search icon'></ul>
-        <input type="text" placeholder="  Buscar...">
-    </li>
+    <form action="{{ route('Home') }}" method="GET" class="search-container">
+        <div class="search-box1">
+            <div class="search-input-container">
+                <i class='bx bx-search icon'></i>
+                <input type="text" 
+                       name="search" 
+                       placeholder="Buscar..." 
+                       value="{{ request('search') }}"
+                       class="search-input">
+            </div>
 
+            <select name="category" class="category-select">
+                <option value="">Todas las categorías</option>
+                @php
+                $categories = App\Models\Product::distinct()->pluck('category');
+                @endphp
+                @foreach($categories as $category)
+                    <option value="{{ $category }}"
+                        {{ request('category') == $category ? 'selected' : '' }}>
+                        {{ $category }}
+                    </option>
+                @endforeach
+            </select>
+
+            <button type="submit" class="search-button">
+                <i class='bx bx-search'></i>
+                <span>Buscar</span>
+            </button>
+        </div>
+    </form>
 </div>
 
-</div>
+
 
 <nav class="sidebar close">
     <header>
@@ -157,9 +183,9 @@
                             <span class="text nav-text">Ventas</span>
                         </a>
                         @endguest
-                        
+
                         @auth
-                        <a href="{{route('misventas')}}">    
+                        <a href="{{route('misventas')}}">
                             <i class='bx bx-purchase-tag-alt icon'></i>
                             <span class="text nav-text">Mis ventas</span>
                         </a>
@@ -227,3 +253,10 @@
         </div>
     </div>
 </footer>
+
+
+<style>
+
+
+
+

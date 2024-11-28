@@ -30,6 +30,25 @@ class ProductController extends Controller
     {
         $products = Product::with('images')->get();
         return view('Homepage', ['products' => $products]);
+
+        $query = Product::query();
+
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+    
+        if ($request->filled('category')) {
+            $query->where('category', $request->category);
+        }
+    
+        $products = $query->paginate(12);
+    
+        return view('home', compact('products'));
+
+
+
+
+
     }
 
     public function store(Request $request)

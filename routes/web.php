@@ -8,7 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
-    $products = Product::with('images')->get();
+    $products = Product::with('images')
+        ->when(request('search'), function ($query, $search) {
+            return $query->where('name', 'like', "%{$search}%")
+                         ->orWhere('description', 'like', "%{$search}%")
+                         ->orWhere('category', 'like', "%{$search}%");
+        })
+        ->when(request('category'), function ($query, $category) {
+            return $query->where('category', $category);
+        })
+        ->get();
+    
     return view('Homepage', ['products' => $products]);
 })->name("Home");
 
