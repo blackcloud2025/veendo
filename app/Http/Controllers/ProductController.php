@@ -44,11 +44,6 @@ class ProductController extends Controller
         $products = $query->paginate(12);
     
         return view('home', compact('products'));
-
-
-
-
-
     }
 
     public function store(Request $request)
@@ -106,7 +101,6 @@ class ProductController extends Controller
         return redirect()->route('product.show', $product->id)->with('success', 'Producto actualizado correctamente!');
         
     }
-
 
     //destruir producto/////////////////////////////////////////
     public function destroy($id)
