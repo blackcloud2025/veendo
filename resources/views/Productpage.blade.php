@@ -38,6 +38,7 @@
             <div class="product-details">
                 <p class="discount">OFF {{ $relatedProduct->offer }}%</p>
                 <h3>{{ $relatedProduct->name }}</h3>
+                <!--hay que hacer que no se desborde el precio--> 
                 <p class="price">Precio: ${{ $relatedProduct->price }}</p>
                 
                 <a href="{{ route('product.show', ['id' => $relatedProduct->id]) }}" class="btn">
