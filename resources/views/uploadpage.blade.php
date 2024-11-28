@@ -44,12 +44,13 @@
                     </div>
                 </div>
 
-                <!-- Categoría -->
+                <!-- Categoría  recordar ponerle un select para restringir las categorias-->
                 <div class="form-group">
                     <label class="form-label" for="category">Categoría</label>
                     <input type="text" id="category" name="category" class="form-control">
                 </div>
 
+                 <!-- Color recordar ponerle un select para restringir los colores-->
                 <!-- Color -->
                 <div class="form-group">
                     <label class="form-label" for="color">Color</label>

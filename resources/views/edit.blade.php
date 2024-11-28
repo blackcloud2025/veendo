@@ -38,12 +38,14 @@
                     <input class="form-control" type="number" step="0.01" name="offer" value="{{ $product->offer }}">
                 </div>
             </div>
-
+            
+            <!-- Categoría  recordar ponerle un select para restringir las categorias-->
             <div class="form-group">
                 <label class="form-label" for="category">Categoría</label>
                 <input class="form-control" type="text" name="category" value="{{ $product->category }}">
             </div>
 
+            <!-- Color recordar ponerle un select para restringir los colores-->
             <div class="form-group">
                 <label class="form-label" for="color">Color</label>
                 <input class="form-control" type="text" name="color" value="{{ $product->color }}">
