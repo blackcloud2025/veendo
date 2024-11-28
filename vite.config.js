@@ -15,7 +15,9 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/slider.js',
                 'resources/js/uploadImageBox.js',
-                'resources/js/logginBehaviour.js'
+                'resources/js/logginBehaviour.js',
+                'resources/js/payment.js'
+
             ],
             refresh: true,
         }),

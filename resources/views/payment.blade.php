@@ -32,7 +32,7 @@
     </form>
 
     <script>
-        var stripe = Stripe('{{ env('STRIPE_KEY')}}');
+        //var stripe = Stripe('{{ env('STRIPE_KEY')}}');// esta bien solo falta ponerle la clave stripe y ordenar el script y lo demas
         var elements = stripe.elements();
         var card = elements.create('card');
         card.mount('#card-element');
