@@ -2,7 +2,7 @@
     <div class="product-panel">
         <div class="content">
             <div class="containerpanel-carousel">
-                
+
                 <div class="carruseles" id="slider">
                     @foreach($images as $image)
                     <section class="slider-section">
@@ -22,14 +22,34 @@
                 <span class="panelprice" style="color:var(--text-color);">${{ $price }}</span>
             </div>
             <div class="buttons">
-                <a href="{{ route($liga) }}" class="btn btn-primary">
+
+                @guest
+                <a href="{{ route('invitacion') }}" class="btn btn-primary">
                     <i class='bx bx-shopping-bag'></i>
                     Comprar
                 </a>
+                @endguest
+
+                @auth
+                <a href="#" class="btn btn-primary">
+                    <i class='bx bx-shopping-bag'></i>
+                    Comprar
+                </a>
+                @endauth
+
+                @guest
+                <a href="{{ route('invitacion') }}" class="btn btn-secondary">
+                    <i class='bx bx-cart-alt'></i>
+                    Carrito
+                </a>
+                @endguest
+
+                @auth
                 <a href="#" class="btn btn-secondary">
                     <i class='bx bx-cart-alt'></i>
                     Carrito
                 </a>
+                @endauth
             </div>
         </div>
 
@@ -69,6 +89,7 @@
         </div>
 
         <div class="content3">
+            //espacio para informacion extra a futuro listo para usarse 
             <h2> otros Productos: </h2>
         </div>
     </div>
