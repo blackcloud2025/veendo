@@ -62,6 +62,8 @@ Route::get('mysales', function () {
 Route::get('uploadpage', function () {
     return view('uploadpage');
 })->name("subirproducto");
+ // estaba debajo de vista de subida de producto ver si aqui funciona(!!)
+ Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
 
 
 //vista de invitacion de usuario
@@ -94,8 +96,7 @@ Route::middleware(['auth'])->group(function () {
 
     //ruta editado de producto 
     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('editar');
-    // estaba debajo de vista de subida de producto ver si aqui funciona(!!)
-    Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+   
 
     //ruta borrado de producto
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
