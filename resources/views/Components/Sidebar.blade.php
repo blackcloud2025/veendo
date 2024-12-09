@@ -265,8 +265,9 @@
     flex-wrap: wrap;
     width: 100%;
     gap: 10px;
-    align-items: center;
+   
     margin-right: 10px;
+    margin-left:90px
 }
 
 
@@ -284,14 +285,20 @@
     max-width: 700px;
     min-width: 100px;
     padding: 10px 10px 10px 35px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 7px;
 }
 
 .category-select {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    border-radius: 7px;
     min-width: 100px;
     width: 200px;
 }
