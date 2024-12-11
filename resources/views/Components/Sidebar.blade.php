@@ -3,35 +3,33 @@
 
 <div class="BarraBusqueda">
     <form action="{{ route('Home') }}" method="GET" class="search-container">
-        <div class="search-box1">
-            <div class="search-input-container">
-                <i class='bx bx-search icon'></i>
-                <input type="text" 
-                       name="search" 
-                       placeholder="Buscar..." 
-                       value="{{ request('search') }}"
-                       class="search-input">
-            </div>
 
-            <select name="category" class="category-select">
-                <option value="">Todas las categorías</option>
-                @php
-                $categories = App\Models\Product::distinct()->pluck('category');
-                @endphp
-                @foreach($categories as $category)
-                    <option value="{{ $category }}"
-                        {{ request('category') == $category ? 'selected' : '' }}>
-                        {{ $category }}
-                    </option>
-                @endforeach
-            </select>
+            <input type="text"
+                name="search"
+                placeholder="Buscar..."
+                value="{{ request('search') }}"
+                class="search-input">
 
             <button type="submit" class="search-button">
                 <i class='bx bx-search'></i>
-                <span>Buscar</span>
             </button>
-        </div>
-    </form>
+    
+
+
+        <select name="category" class="category-select">
+            <option value="">todas las categorías</option>
+            @php
+            $categories = App\Models\Product::distinct()->pluck('category');
+            @endphp
+            @foreach($categories as $category)
+            <option value="{{ $category }}"
+                {{ request('category') == $category ? 'selected' : '' }}>
+                {{ $category }}
+            </option>
+            @endforeach
+        </select>
+</div>
+</form>
 </div>
 
 
@@ -256,67 +254,60 @@
 
 
 <style>
+    /* ===== barra busqueda ===== */
 
+    .BarraBusqueda {
+        width: 100%;
+        align-items: center;
+        height: auto;
+        min-height: 77px;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        display: flex;
+        background-color: var(--navbar-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-bottom-color: #18191a;
+        padding: 10px;
+    }
 
+    .search-container{
+        margin-left: 70px;
+    }
+    .search-input{
+        height: 35px;
+        background-color: var(--primary-color-light);
+        color: var(--text-color);
+        margin: 3px;
+        border-style: none;
+        outline: none;
+        border-radius: 5px;
+        padding: 5px;
+    }
 
+    .search-button{
+        width: 35px;
+        height: 35px;
+        background-color: var(--primary-color-light2);
+        color: var(--text-color);
+        border-style: none;
+        border-radius: 5px;
+        padding: 5px;
+    }
 
-.search-box1 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 10px;
-   
-    margin-right: 10px;
-    margin-left:90px
-}
+    .search-button i {
+        margin-top: 5px;
+    }
 
+    .category-select{
+        height: 35px;
+        background-color: var(--primary-color-light);
+        color: var(--text-color);
+        margin: 3px;
+        outline: none;
+        border-style: none;
+        border-radius: 5px;
+        padding: 5px;   
+    }
 
-
-.search-input-container .icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    z-index: 1;
-}
-
-.search-input {
-    max-width: 700px;
-    min-width: 100px;
-    padding: 10px 10px 10px 35px;
-    outline: none;
-    border: none;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
-    border-radius: 7px;
-}
-
-.category-select {
-    padding: 10px;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
-    outline: none;
-    border: none;
-    border-radius: 7px;
-    min-width: 100px;
-    width: 200px;
-}
-
-.search-button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100px;
-}
-
-.search-button i {
-    margin-right: 5px;
-}
-</style>
+  </style>

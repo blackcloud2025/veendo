@@ -230,8 +230,6 @@ body.dark .sidebar header .toggle {
     font-size: 17px;
     font-weight: 500;
     transition: var(--tran-05);
-    
-
 }
 
 .sidebar li a {
@@ -367,44 +365,6 @@ body.dark .home .text {
     color: var(--text-color);
 }
 
-/* ===== barra busqueda ===== */
-
-.BarraBusqueda {
-    width: 100%;
-    align-items: center;
-    height: 80px;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
-    display: flex;
-    background-color: var(--navbar-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom-color: #18191a;
-    
-}
-
-
-
-
-
-
-.BarraBusqueda li.search-box1 input {
-    height: 100%;
-    width: calc(100% - 50px);
-    outline: none;
-    border: none;
-    background-color: var(--primary-color-light);
-    color: var(--text-color);
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: 500;
-}
-
-
-.BarraBusqueda li.search-box1 .icon {
-    color: var(--text-color);
-
-}
 
 .imgbar {
     background-color: var(--crdbklt-color);
