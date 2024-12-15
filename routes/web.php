@@ -18,7 +18,7 @@ Route::get('/', function () {
         ->when(request('category'), function ($query, $category) {
             return $query->where('category', $category);
         })
-        ->paginate(50);
+        ->paginate(10);
 
     return view('Homepage', ['products' => $products]);
 })->name("Home");

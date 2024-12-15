@@ -89,62 +89,50 @@
     </div>
 </div>
 
-<!-- Botones de paginación --> 
- <div class="pagination-buttons"> 
-    @if ($products->currentPage() > 1) 
+<!-- Botones de paginación -->
+<div class="pagination-buttons">
+    @if ($products->currentPage() > 1)
     <a href="{{ $products->previousPageUrl() }}" class="btn">Anterior</a>
-     @else <span class="btn disabled">Anterior</span> @endif @if ($products->hasMorePages()) 
-     <a href="{{ $products->nextPageUrl() }}" class="btn">Siguiente</a> @else
-      <span class="btn disabled">Siguiente</span> @endif
+    @else <span class="btn disabled">Anterior</span> @endif @if ($products->hasMorePages())
+    <a href="{{ $products->nextPageUrl() }}" class="btn">Siguiente</a> @else
+    <span class="btn disabled">Siguiente.</span> @endif
 
 
 
 
 
 
-      <style>
+    <style>
+        .pagination-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-.pagination-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-   
-}
+        .pagination-buttons .btn {
+            max-width: 100px;
+            margin: 5px;
+            padding: 15px;
+            border-radius: 7px;
+            color: var(--text-color);
+            background-color: var(--primary-color-light2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            /* Agregar márgenes al texto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+        }
 
-.pagination-buttons .btn {
-    max-width: 80px;
-    min-width: 50px;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 7px;
-    text-decoration: none;
-    color: #333;
-    background-color: var(sidebar--color);
-    cursor: pointer;
-}
+        .pagination-buttons .btn:hover {
+            background-color: #e9ecef;
+        }
+    </style>
 
-.pagination-buttons .btn:hover {
-    background-color: #e9ecef;
-}
+    @endsection
 
-.pagination-buttons .disabled {
-    max-width: 80px;
-    min-width: 50px;
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    text-decoration: none;
-    color: #aaa;
-    background-color: #f8f9fa;
-    cursor: not-allowed;
-}
-
-
-      </style>
-
-@endsection
-
-@section('scripts')
-@vite('resources/js/slider.js')
-@endsection
+    @section('scripts')
+    @vite('resources/js/slider.js')
+    @endsection
