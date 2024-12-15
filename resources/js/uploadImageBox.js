@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${e.target.result}" class="preview-image">
                     <button type="button" class="remove-image">×</button>
                     <div class="file-info">
-                        <small>${file.name} (${(file.size / 1024).toFixed(2)} KB)</small>
+                        <small class="inffiletxt">${file.name} (${(file.size / 1024).toFixed(2)} KB)</small>
                     </div>
                 `;
 

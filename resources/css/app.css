@@ -873,7 +873,9 @@ body.dark .home .text {
 }
 
 
-
+.inffiletxt{
+    color: var(--text-color);
+}
 /* ======================== footer ================================== */
 
 .footer {
