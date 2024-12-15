@@ -97,12 +97,7 @@
     <a href="{{ $products->nextPageUrl() }}" class="btn">Siguiente</a> @else
     <span class="btn disabled">Siguiente.</span> @endif
 
-
-
-
-
-
-    <style>
+ <style>
         .pagination-buttons {
             display: flex;
             justify-content: center;
