@@ -541,8 +541,6 @@ body.dark .home .text {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: -30px;
-    gap: 1px;
 }
 
 .product-card {
