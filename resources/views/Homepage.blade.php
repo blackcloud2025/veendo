@@ -70,37 +70,79 @@
 <div class="contenedor">
     <div class="product-container">
         @foreach($products as $product)
-
         <div class="product-card" data-id="{{$product->id}}">
-
             <div class="image-container">
                 @if($product->images->isNotEmpty())
-                <img loading="lazy" clr src="{{Storage::url($product->images->first()->image_path) }}" alt="{{ $product->name }}">
+                <img loading="lazy" clr src="{{ Storage::url($product->images->first()->image_path) }}" alt="{{ $product->name }}">
                 @endif
             </div>
-
             <div class="product-details">
                 <p class="discount">OFF {{ $product->offer }}%</p>
                 <h3>{{ $product->name }}</h3>
-                
-                <!--hay que hacer que no se desborde el precio--> 
                 <p class="price">Precio: ${{ $product->price }}</p>
-
                 <a href="{{ route('product.show', ['id' => $product->id]) }}" class="btn">
                     <span class="text nav-text">Saber más</span>
                 </a>
-
-                <a href="#" class="btn">
-                    <span class="text nav-text">Saber más</span>
-                </a>
-
-
             </div>
-
         </div>
         @endforeach
     </div>
 </div>
+
+<!-- Botones de paginación --> 
+ <div class="pagination-buttons"> 
+    @if ($products->currentPage() > 1) 
+    <a href="{{ $products->previousPageUrl() }}" class="btn">Anterior</a>
+     @else <span class="btn disabled">Anterior</span> @endif @if ($products->hasMorePages()) 
+     <a href="{{ $products->nextPageUrl() }}" class="btn">Siguiente</a> @else
+      <span class="btn disabled">Siguiente</span> @endif
+
+
+
+
+
+
+      <style>
+
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   
+}
+
+.pagination-buttons .btn {
+    max-width: 80px;
+    min-width: 50px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: #333;
+    background-color: var(sidebar--color);
+    cursor: pointer;
+}
+
+.pagination-buttons .btn:hover {
+    background-color: #e9ecef;
+}
+
+.pagination-buttons .disabled {
+    max-width: 80px;
+    min-width: 50px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    text-decoration: none;
+    color: #aaa;
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+
+      </style>
+
 @endsection
 
 @section('scripts')

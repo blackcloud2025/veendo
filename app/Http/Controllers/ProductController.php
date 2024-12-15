@@ -26,25 +26,21 @@ class ProductController extends Controller
         ]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('images')->get();
-        return view('Homepage', ['products' => $products]);
-
-        $query = Product::query();
-
+        $query = Product::with('images');
         if ($request->filled('search')) {
             $query->where('name', 'like', '%' . $request->search . '%');
         }
-    
         if ($request->filled('category')) {
             $query->where('category', $request->category);
         }
-    
-        $products = $query->paginate(12);
-    
-        return view('home', compact('products'));
+        $products = $query->paginate(10); // Número de productos por página
+        return view('Homepage', compact('products'));
     }
+
+
+
 
     public function store(Request $request)
     {
@@ -66,7 +62,7 @@ class ProductController extends Controller
             'images' => 'required|array|max:10',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        
+
 
         if ($validador->fails()) {
             return response()->json([
@@ -80,11 +76,11 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'offer' => $request->offer,
-            'category'=>$request->category,
-            'color'=>$request->color,
-            'size'=>$request->size,
-            'model'=>$request->model,
-            'version'=>$request->version,
+            'category' => $request->category,
+            'color' => $request->color,
+            'size' => $request->size,
+            'model' => $request->model,
+            'version' => $request->version,
             'user_id' => Auth::id(), // Asegúrate de que el user_id se proporciona
         ]);
 
@@ -99,7 +95,6 @@ class ProductController extends Controller
         }
 
         return redirect()->route('product.show', $product->id)->with('success', 'Producto actualizado correctamente!');
-        
     }
 
     //destruir producto/////////////////////////////////////////
