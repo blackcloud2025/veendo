@@ -31,7 +31,10 @@ class AuthController extends Controller
         if ($user && Hash::check($pass, $user->password)) {
             $request->session()->regenerate();
             Auth::login($user);
-            return redirect()->route('Home');
+            return response()->json([
+                'success' => true,
+                'redirect' => route('Home')
+            ]);
         }
 
         return response()->json([
@@ -44,7 +47,7 @@ class AuthController extends Controller
     {
         $validador = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8'
         ]);
 
@@ -59,10 +62,15 @@ class AuthController extends Controller
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->password = Hash::make($request->password); // Usando Hash::make
+            $user->password = Hash::make($request->password);
             $user->save();
             $request->session()->regenerate();
             Auth::login($user);
+
+            return response()->json([
+                'success' => true,
+                'redirect' => route('Home')
+            ]);
         } catch (\Throwable $th) {
             return response()->json([
                 'success' => false,
@@ -70,8 +78,6 @@ class AuthController extends Controller
                 'message' => 'Error al registrar en la DB'
             ]);
         }
-
-        return redirect()->route('Home');
     }
 
     public function logout(Request $request)
@@ -79,15 +85,15 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route("Home");
+        return redirect()->route('Home');
     }
-// muestra la info del usuario en la pagina
+
     public function show()
     {
         $user = Auth::user();
         return view('profilepage', compact('user'));
     }
-//funcion para editar el usuario
+
     public function edit()
     {
         $user = Auth::user();
@@ -95,38 +101,51 @@ class AuthController extends Controller
     }
 
     public function update(Request $request)
-{
-    $user = Auth::user();
+    {
+        $user = Auth::user();
 
-    $validador = Validator::make($request->all(), [
-        'name' => 'required',
-        'email' => 'required|email|unique:users,email,' . $user->id,
-        'password' => 'nullable|min:8'
-    ]);
+        $validador = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'password' => 'nullable|min:8'
+        ]);
 
-    if ($validador->fails()) {
-        return redirect()->back()->withErrors($validador)->withInput();
+        if ($validador->fails()) {
+            return redirect()->back()->withErrors($validador)->withInput();
+        }
+
+        try {
+            $user->name = $request->name;
+            $user->email = $request->email;
+            if ($request->filled('password')) {
+                $user->password = Hash::make($request->password);
+            }
+            $user->save();
+
+            return redirect()->route('miperfil')->with('success', 'Perfil actualizado correctamente');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error al actualizar el perfil: ' . $e->getMessage());
+        }
     }
 
-    $user->name = $request->name;
-    $user->email = $request->email;
-    if ($request->filled('password')) {
-        $user->password = Hash::make($request->password);
+    public function destroy()
+    {
+        $user = Auth::user();
+        try {
+            $user->delete();
+            Auth::logout();
+            session()->invalidate();
+            session()->regenerateToken();
+    
+            return response()->json([
+                'success' => true,
+                'redirect' => route('Home')
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Error al eliminar el perfil: ' . $e->getMessage()
+            ]);
+        }
     }
-    $user->save();
-
-    return redirect()->route('miperfil')->with('success', 'Perfil actualizado correctamente');
-}
-//destrutir usuario
-public function destroy()
-{
-    $user = Auth::user();
-    $user->delete();
-    Auth::logout();
-    session()->invalidate();
-    session()->regenerateToken();
-
-    return redirect()->route('Home')->with('success', 'Perfil eliminado correctamente');
-}
-
 }
