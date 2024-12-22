@@ -36,15 +36,10 @@ Route::get('Notifications', function () {
     return view('Notificationpage');
 })->name("Notificaciones");
 
-
-// Rutas para el perfil del usuario autenticado 
-Route::middleware(['auth'])->group(function () {
-    Route::get('perfil', [AuthController::class, 'show'])->name('miperfil');
-    Route::get('perfil/edit', [AuthController::class, 'edit'])->name('perfil.edit');
-    Route::put('perfil', [AuthController::class, 'update'])->name('perfil.update');
-    Route::delete('perfil', [AuthController::class, 'destroy'])->name('perfil.destroy');
-});
-
+//vista de perfil de usuario
+Route::get('perfil', function () {
+    return view('pfrofilepage');
+})->name("miperfil");
 
 //vista de favoritos de usuario
 Route::get('favorites', function () {
@@ -67,7 +62,7 @@ Route::get('mysales', function () {
 Route::get('uploadpage', function () {
     return view('uploadpage');
 })->name("subirproducto");
-Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+ Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
 
 
 //vista de invitacion de usuario
@@ -82,7 +77,7 @@ Route::middleware(['guest'])->group(function () {
     })->name("loggeo");
 });
 
-//rutas de manejo de usuarios para loggueo y creacion de usuario
+//rutas de manejo de usuarios
 Route::post('login', [AuthController::class, 'login'])->name("login.store");
 Route::post('register', [AuthController::class, 'registro'])->name("register.store");
 Route::get('logout', [AuthController::class, 'logout'])->name("logout.store");
@@ -100,7 +95,7 @@ Route::middleware(['auth'])->group(function () {
 
     //ruta editado de producto 
     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('editar');
-
+   
 
     //ruta borrado de producto
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
