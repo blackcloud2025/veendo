@@ -11,15 +11,14 @@ export default defineConfig({
                 'resources/css/uploadForm.css',
                 'resources/css/loggin.css',
                 'resources/css/payment.css',
-                'resources/css/profile.css',
 
                 //scripts
                 'resources/js/app.js',
                 'resources/js/slider.js',
                 'resources/js/uploadImageBox.js',
                 'resources/js/logginBehaviour.js',
-                'resources/js/payment.js',
-                'resources/js/profile.js'
+                'resources/js/payment.js'
+
             ],
             refresh: true,
         }),
