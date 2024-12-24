@@ -82,4 +82,84 @@ class AuthController extends Controller
         return redirect()->route('Home');
     }
 
+
+    // Mostrar usuario específico
+
+    public function show()
+    {
+        $user = Auth::user(); // Obtiene el usuario autenticado 
+        return view('profilepage', compact('user'));
+    }
+
+
+
+    //Mostrar formulario de edición
+
+    public function edit(User $user)
+    {
+        return view('profilepage.edit', compact('user'));
+    }
+
+    // actualizar usuario
+    public function update(Request $request, User $user)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'role' => 'required|in:admin,user',
+            'password' => 'nullable|min:8|confirmed'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        try {
+            $userData = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'role' => $request->role
+            ];
+            // Solo actualizar password si se proporcionó uno nuevo
+            if ($request->filled('password')) {
+                $userData['password'] = Hash::make($request->password);
+            }
+
+            $user->update($userData);
+
+            return redirect()
+                ->back()
+                ->with('success', 'Usuario actualizado exitosamente');
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->with('error', 'Error al actualizar el usuario: ' . $e->getMessage())
+                ->withInput();
+        }
+    }
+
+    //Eliminar usuario
+    public function destroy(User $user, Request $request)
+{
+    try {
+        // Si el usuario se está eliminando a sí mismo
+        $isSelfDelete = $user->id === auth()->id();
+        
+        $user->delete();
+
+        if ($isSelfDelete) {
+            Auth::logout();
+            $request->session()->invalidate();
+            return redirect()->route('login')->with('success', 'Tu cuenta ha sido eliminada exitosamente');
+        }
+
+        return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
+
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Error al eliminar el usuario: ' . $e->getMessage());
+    }
+}
 }
