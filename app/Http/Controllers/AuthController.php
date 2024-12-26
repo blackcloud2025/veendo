@@ -107,7 +107,7 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'role' => 'required|in:admin,user',
-            'password' => 'nullable|min:8|confirmed'
+            'password' => 'required|min:8|confirmed'
         ]);
 
         if ($validator->fails()) {
@@ -147,13 +147,13 @@ class AuthController extends Controller
         try {
             // Si el usuario se está eliminando a sí mismo
             $isSelfDelete = $user->id === auth()->id();
-
+            Auth::logout();
             $user->delete();
-
+            $request->session()->invalidate();
             if ($isSelfDelete) {
                 Auth::logout();
                 $request->session()->invalidate();
-                return redirect()->route('login')->with('success', 'Tu cuenta ha sido eliminada exitosamente');
+                return redirect()->route('Home')->with('success', 'Tu cuenta ha sido eliminada exitosamente');
             }
 
             return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');

@@ -110,7 +110,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     // Formulario de edición de perfil de usuario
-    Route::get('perfil/{user}/edit', [AuthController::class, 'edit'])->name('miperfil.edit');
+    Route::get('perfil/{user}', [AuthController::class, 'edit'])->name('miperfil.edit');
 
     // Actualizar perfil de usuario
     Route::put('perfil/{user}', [AuthController::class, 'update'])->name('miperfil.update');
