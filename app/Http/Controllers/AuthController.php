@@ -143,23 +143,22 @@ class AuthController extends Controller
 
     //Eliminar usuario
     public function destroy(User $user, Request $request)
-{
-    try {
-        // Si el usuario se está eliminando a sí mismo
-        $isSelfDelete = $user->id === auth()->id();
-        
-        $user->delete();
+    {
+        try {
+            // Si el usuario se está eliminando a sí mismo
+            $isSelfDelete = $user->id === auth()->id();
 
-        if ($isSelfDelete) {
-            Auth::logout();
-            $request->session()->invalidate();
-            return redirect()->route('login')->with('success', 'Tu cuenta ha sido eliminada exitosamente');
+            $user->delete();
+
+            if ($isSelfDelete) {
+                Auth::logout();
+                $request->session()->invalidate();
+                return redirect()->route('login')->with('success', 'Tu cuenta ha sido eliminada exitosamente');
+            }
+
+            return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error al eliminar el usuario: ' . $e->getMessage());
         }
-
-        return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
-
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Error al eliminar el usuario: ' . $e->getMessage());
     }
-}
 }

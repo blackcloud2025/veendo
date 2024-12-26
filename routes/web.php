@@ -37,18 +37,9 @@ Route::get('Notifications', function () {
 })->name("Notificaciones");
 
 //vista de perfil de usuario
-Route::get('perfil', function () {return view('profilepage');})->name("miperfil"); 
-
-
-// Formulario de edición de perfil de usuario
-Route::get('perfil/{user}/edit', [AuthController::class, 'edit'])->name('miperfil.edit');
-
-// Actualizar perfil de usuario
-Route::put('perfil/{user}', [AuthController::class, 'update'])->name('miperfil.update');
-
-// Eliminar usuario
-Route::delete('perfil/{user}', [AuthController::class, 'destroy'])->name('miperfil.destroy');
-
+Route::get('perfil', function () {
+    return view('profilepage');
+})->name("miperfil");
 
 //vista de favoritos de usuario
 Route::get('favorites', function () {
@@ -71,7 +62,7 @@ Route::get('mysales', function () {
 Route::get('uploadpage', function () {
     return view('uploadpage');
 })->name("subirproducto");
- Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
 
 
 //vista de invitacion de usuario
@@ -104,7 +95,7 @@ Route::middleware(['auth'])->group(function () {
 
     //ruta editado de producto 
     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('editar');
-   
+
 
     //ruta borrado de producto
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
@@ -115,4 +106,15 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::post('/process-payment', [StripePaymentController::class, 'processPayment'])->name('process.payment');
+
+
+
+    // Formulario de edición de perfil de usuario
+    Route::get('perfil/{user}/edit', [AuthController::class, 'edit'])->name('miperfil.edit');
+
+    // Actualizar perfil de usuario
+    Route::put('perfil/{user}', [AuthController::class, 'update'])->name('miperfil.update');
+
+    // Eliminar usuario
+    Route::delete('perfil/{user}', [AuthController::class, 'destroy'])->name('miperfil.destroy');
 });
