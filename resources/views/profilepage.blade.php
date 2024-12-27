@@ -51,7 +51,7 @@
 
              <!-- Formulario de Edición -->
              <div id="edit-tab" class="tab-content">
-                <form action="{{ route('perfil.update', $user) }}" method="POST">
+                <form action="{{ route('miperfil.update', $user) }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -110,7 +110,7 @@
                         <h4>Eliminar Cuenta</h4>
                         <p>Una vez que elimines tu cuenta, no hay vuelta atrás. Por favor, estás seguro.</p>
                     </div>
-                    <form action="{{ route('perfil.destroy', $user) }}" method="POST">
+                    <form action="{{ route('miperfil.destroy', $user) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="button button-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar tu cuenta?')">
@@ -121,18 +121,7 @@
             </div>
         </div>
 
-        <!-- Mensajes de Estado -->
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
-
-        @if(session('error'))
-        <div class="alert alert-error">
-            {{ session('error') }}
-        </div>
-        @endif
+        
     </div>
 @endsection
 

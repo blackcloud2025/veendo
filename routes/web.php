@@ -36,10 +36,7 @@ Route::get('Notifications', function () {
     return view('Notificationpage');
 })->name("Notificaciones");
 
-//vista de perfil de usuario
-Route::get('perfil', function () {
-    return view('profilepage');
-})->name("miperfil");
+
 
 //vista de favoritos de usuario
 Route::get('favorites', function () {
@@ -110,6 +107,9 @@ Route::middleware(['auth'])->group(function () {
 
 
     // Formulario de edición de perfil de usuario
+
+    Route::get('perfil', [AuthController::class, 'show'])->name("miperfil")->middleware('auth');
+
     Route::get('perfil/{user}', [AuthController::class, 'edit'])->name('miperfil.edit');
 
     // Actualizar perfil de usuario

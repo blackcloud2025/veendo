@@ -97,7 +97,7 @@ class AuthController extends Controller
 
     public function edit(User $user)
     {
-        return view('profilepage.edit', compact('user'));
+        return view('profilepage', compact('user'));
     }
 
     // actualizar usuario
@@ -107,7 +107,7 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'role' => 'required|in:admin,user',
-            'password' => 'required|min:8|confirmed'
+            'password' => 'nullable|min:8|confirmed'
         ]);
 
         if ($validator->fails()) {
@@ -153,10 +153,10 @@ class AuthController extends Controller
             if ($isSelfDelete) {
                 Auth::logout();
                 $request->session()->invalidate();
-                return redirect()->route('Home')->with('success', 'Tu cuenta ha sido eliminada exitosamente');
+                return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
             }
 
-            return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
+                return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error al eliminar el usuario: ' . $e->getMessage());
         }
