@@ -71,16 +71,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label" for="role">Rol</label>
-                        <select id="role" name="role" class="form-input">
-                            <option value="user" {{ old('role', $user->role) === 'user' ? 'selected' : '' }}>Usuario</option>
-                            <option value="admin" {{ old('role', $user->role) === 'admin' ? 'selected' : '' }}>Administrador</option>
-                        </select>
-                        @error('role')
-                            <p class="error-text">{{ $message }}</p>
-                        @enderror
-                    </div>
+                    
 
                     <div class="form-group">
                         <label class="form-label" for="password">Nueva Contraseña</label>
@@ -108,7 +99,7 @@
                 <div class="danger-box">
                     <div class="danger-box-text">
                         <h4>Eliminar Cuenta</h4>
-                        <p>Una vez que elimines tu cuenta, no hay vuelta atrás. Por favor, estás seguro.</p>
+                        <p>Una vez que elimines tu cuenta, no hay vuelta atrás. Por favor, estás seguro?.</p>
                     </div>
                     <form action="{{ route('miperfil.destroy', $user) }}" method="POST">
                         @csrf

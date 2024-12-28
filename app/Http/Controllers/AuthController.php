@@ -106,7 +106,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'role' => 'required|in:admin,user',
+            'role' => 'required|in:admin,user,publisher',
             'password' => 'nullable|min:8|confirmed'
         ]);
 
@@ -118,17 +118,17 @@ class AuthController extends Controller
         }
 
         try {
-            $userData = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'role' => $request->role
-            ];
-            // Solo actualizar password si se proporcionó uno nuevo
+            // Siempre actualizamos estos campos
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->role = $request->role;
+
+            // Solo actualizamos la contraseña si se proporcionó una nueva
             if ($request->filled('password')) {
-                $userData['password'] = Hash::make($request->password);
+                $user->password = Hash::make($request->password);
             }
 
-            $user->update($userData);
+            $user->save();
 
             return redirect()
                 ->back()
@@ -156,7 +156,7 @@ class AuthController extends Controller
                 return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
             }
 
-                return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
+            return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error al eliminar el usuario: ' . $e->getMessage());
         }
