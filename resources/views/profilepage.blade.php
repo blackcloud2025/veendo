@@ -95,7 +95,6 @@
 
             <!-- Zona de Peligro -->
             <div class="danger-zone">
-                <h3>Zona de Peligro</h3>
                 <div class="danger-box">
                     <div class="danger-box-text">
                         <h4>Eliminar Cuenta</h4>

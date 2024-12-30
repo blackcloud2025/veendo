@@ -28,6 +28,12 @@
     --btnrbd-color: blue;
     --footer-color: #365267;
 
+    
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+
 
 
     /* ====== Transition ====== */
@@ -68,6 +74,12 @@ body.dark {
     --grad-color: radial-gradient(#002F5C, blue);
     --btnrbd-color: blue;
     --footer-color: #242526;
+    
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+
 }
 
 /* ===== Sidebar ===== */
