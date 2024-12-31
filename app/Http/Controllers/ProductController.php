@@ -114,7 +114,7 @@ class ProductController extends Controller
 
         // Eliminar las imágenes asociadas al producto//
         foreach ($product->images as $image) {
-            Storage::disk('public')->delete($image->image_path);
+            Storage::disk('public\product_images')->delete($image->image_path);
             $image->delete();
         }
 
