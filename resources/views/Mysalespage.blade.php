@@ -1,6 +1,12 @@
 @extends('layout')
 @section('Titulo','mis ventas.')
+
+@section('styles')
+@vite('resources/css/Prodcard.css')
+@endsection
+
 @section('Contenido')
+
 
 <div class="action-bar">
     <a href="{{route('subirproducto')}}">

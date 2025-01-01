@@ -12,7 +12,9 @@ export default defineConfig({
                 'resources/css/loggin.css',
                 'resources/css/payment.css',
                 'resources/css/profile.css',
-
+                'resources/css/Prodcard.css',
+                
+                
                 //scripts
                 'resources/js/app.js',
                 'resources/js/slider.js',
