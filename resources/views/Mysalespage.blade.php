@@ -69,7 +69,7 @@
 <div class="action-bar">
     <a href="#">
         <i class='bx bxs-file-plus'></i>
-        <span class="text nav-text"> vere que agregar</span>
+        <span class="text nav-text"> vere que agregar.</span>
     </a>
 </div>
 @endsection

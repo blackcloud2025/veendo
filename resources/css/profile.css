@@ -164,7 +164,8 @@
 
 .button-primary {
     background: var(--primary-color-light2);
-    color: white;
+    color: var(--text-color);
+    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .button-primary:hover {
