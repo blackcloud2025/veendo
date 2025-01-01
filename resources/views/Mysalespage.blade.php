@@ -32,7 +32,7 @@
             <h3>{{ $product->name }}</h3>
             
             <!--hay que hacer que no se desborde el precio--> 
-            <p class="price">Precio: ${{ $product->price }}</p>
+            <p class="price">${{ $product->price }}</p>
 
             <!-- boton para editar el producto -->    
                 <form action="{{ route('editar', $product->id) }}">

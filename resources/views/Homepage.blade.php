@@ -79,7 +79,7 @@
             <div class="product-details">
                 <p class="discount">OFF {{ $product->offer }}%</p>
                 <h3>{{ $product->name }}</h3>
-                <p class="price">Precio: ${{ $product->price }}</p>
+                <p class="price"> ${{ $product->price }}</p>
                 <a href="{{ route('product.show', ['id' => $product->id]) }}" class="btn">
                     <span class="text nav-text">Saber más</span>
                 </a>
