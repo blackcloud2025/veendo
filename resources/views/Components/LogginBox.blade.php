@@ -30,6 +30,7 @@
                         <input type="password" placeholder="Contraseña" name="password">
                     </label>
                 </div>
+                <p>Ponga al menos una letra mayuscula y un numero.</p>
 
                 <input type="submit" value="Registrarse">
                 <div class="alerta-error">Todos los campos son obligatorios</div>

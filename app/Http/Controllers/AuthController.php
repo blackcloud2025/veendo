@@ -34,10 +34,10 @@ class AuthController extends Controller
             return redirect()->route('Home');
         }
 
-        return response()->json([
-            'success' => false,
-            'error' => "User or password isn't correct"
-        ]);
+        return redirect()
+                ->back()
+                ->with('error', 'Error al ingrear usuario o password.')
+                ->withInput();
     }
 
     public function registro(Request $request)
@@ -120,6 +120,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return redirect()
                 ->back()
+                ->with('error', 'Error al actualizar el usuario: ')
                 ->withErrors($validator)
                 ->withInput();
         }
