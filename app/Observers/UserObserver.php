@@ -68,7 +68,7 @@ class UserObserver
         foreach ($products as $product) {
             // Eliminar imágenes
             foreach ($product->images as $image) {
-                Storage::disk('public')->delete($image->image_path);
+                Storage::disk('public\poduct_images')->delete($image->image_path);
                 $image->delete();
             }
             
