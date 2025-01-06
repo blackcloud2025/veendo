@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -35,9 +37,9 @@ class AuthController extends Controller
         }
 
         return redirect()
-                ->back()
-                ->with('error', 'Error al ingrear usuario o password.')
-                ->withInput();
+            ->back()
+            ->with('error', 'Error al ingrear usuario o password.')
+            ->withInput();
     }
 
     public function registro(Request $request)
@@ -116,7 +118,7 @@ class AuthController extends Controller
                 'regex:/^(?=.*[A-Z])(?=.*[0-9]).+$/'
             ]
         ]);
-    
+
         if ($validator->fails()) {
             return redirect()
                 ->back()
@@ -124,28 +126,28 @@ class AuthController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-    
+
         try {
 
             $userData = [
                 'name' => $request->name,
                 'email' => $request->email,
             ];
-    
+
 
             // Siempre actualizamos estos campos
             $user->name = $request->name;
             $user->email = $request->email;
-            
+
 
 
             // Solo actualizamos la contraseña si se proporcionó una nueva
             if ($request->filled('password')) {
                 $userData['password'] = Hash::make($request->password);
             }
-    
+
             $user->update($userData);
-    
+
             return redirect()
                 ->back()
                 ->with('success', 'Usuario actualizado exitosamente');
@@ -156,7 +158,7 @@ class AuthController extends Controller
                 ->withInput();
         }
     }
-    
+
 
     //Eliminar usuario
     public function destroy(User $user, Request $request)
@@ -164,16 +166,31 @@ class AuthController extends Controller
         try {
             // Si el usuario se está eliminando a sí mismo
             $isSelfDelete = $user->id === auth()->id();
-            Auth::logout();
-            $user->delete();
-            $request->session()->invalidate();
+
+            // Obtener todos los productos del usuario
+            $products = Product::where('user_id', $user->id)->get();
+
+            // Eliminar productos y sus imágenes
+            foreach ($products as $product) {
+                // Eliminar imágenes
+                foreach ($product->images as $image) {
+                    Storage::disk('public')->delete($image->image_path);
+                    $image->delete();
+                }
+
+                // Eliminar producto
+                $product->delete();
+            }
+
+            // Eliminar el usuario
             if ($isSelfDelete) {
                 Auth::logout();
                 $request->session()->invalidate();
-                return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
             }
 
-                return redirect()->route('Home')->with('success', 'Usuario eliminado exitosamente');
+            $user->delete();
+
+            return redirect()->route('Home')->with('success', 'Usuario con productos eliminados');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error al eliminar el usuario: ' . $e->getMessage());
         }

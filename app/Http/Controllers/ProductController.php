@@ -94,7 +94,7 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('product.show', $product->id)->with('success', 'Producto actualizado correctamente!');
+        return redirect()->route('product.show', $product->id)->with('success', 'Producto subido correctamente!');
     }
 
     //destruir producto/////////////////////////////////////////
@@ -114,7 +114,7 @@ class ProductController extends Controller
 
         // Eliminar las imágenes asociadas al producto//
         foreach ($product->images as $image) {
-            Storage::disk('public\poduct_images')->delete($image->image_path);
+            Storage::disk('public')->delete($image->image_path);
             $image->delete();
         }
 
