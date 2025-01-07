@@ -81,6 +81,12 @@ Route::get('logout', [AuthController::class, 'logout'])->name("logout.store");
 
 //rutas de manejo de prodctos
 Route::middleware(['auth'])->group(function () {
+
+    //vista de invitacion de usuario
+Route::get('dashboard', function () {
+    return view('Dashboard');
+})->name("midashboard");
+
     //ruta indice de productos
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 

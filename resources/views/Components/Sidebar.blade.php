@@ -83,7 +83,15 @@
                         </a>
                         @endauth
                     </li>
-
+                        
+                        @auth
+                    <li class="nav-link">
+                    <a href="{{route('midashboard')}}">
+                            <i class='bx bx-list-ul icon'></i>
+                            <span class="text nav-text">dashboard</span>
+                        </a> 
+                        @endauth
+                    </li>  
 
                     <li class="nav-link">
                         @guest
