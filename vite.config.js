@@ -14,14 +14,16 @@ export default defineConfig({
                 'resources/css/profile.css',
                 'resources/css/Prodcard.css',
                 'resources/css/dashboard.css',
-                
+                'resources/css/publisher.css',
+
                 //scripts
                 'resources/js/app.js',
                 'resources/js/slider.js',
                 'resources/js/uploadImageBox.js',
                 'resources/js/logginBehaviour.js',
                 'resources/js/payment.js',
-                'resources/js/profile.js'
+                'resources/js/profile.js',
+                'resources/js/publisher.js'
 
             ],
             refresh: true,
