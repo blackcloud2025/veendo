@@ -54,4 +54,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class);
     }
+
+
+
+    // checa  si es administrador
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; 
+    }
+
+    //checa si es publicador
+    public function isPublisher()
+    {
+        return $this->role === 'publisher';
+    }
 }

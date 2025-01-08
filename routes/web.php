@@ -26,10 +26,15 @@ Route::get('/', function () {
 //vista de muestra de productos individual y relacionados
 Route::get('/product/{id}', [ProductController::class, 'show'])->name("product.show");
 
-//vista de historial decompra de usuario
+//vista dashboard
 Route::get('dasboard', function () {
     return view('dashboard');
 })->name("mi dashboard");
+
+//vista dashboard
+Route::get('publisherpage', function () {
+    return view('publisherpage');
+})->name("mipublisher");
 
 
 //vista de historial decompra de usuario

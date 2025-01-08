@@ -4,16 +4,16 @@
 <div class="BarraBusqueda">
     <form action="{{ route('Home') }}" method="GET" class="search-container">
 
-            <input type="text"
-                name="search"
-                placeholder="Buscar..."
-                value="{{ request('search') }}"
-                class="search-input">
+        <input type="text"
+            name="search"
+            placeholder="Buscar..."
+            value="{{ request('search') }}"
+            class="search-input">
 
-            <button type="submit" class="search-button">
-                <i class='bx bx-search'></i>
-            </button>
-    
+        <button type="submit" class="search-button">
+            <i class='bx bx-search'></i>
+        </button>
+
 
 
         <select name="category" class="category-select">
@@ -83,15 +83,30 @@
                         </a>
                         @endauth
                     </li>
-                        
-                        @auth
+
+                    @auth
+                    @if(Auth::user() && Auth::User()->isAdmin())
                     <li class="nav-link">
-                    <a href="{{route('midashboard')}}">
+                        <a href="{{route('midashboard')}}">
                             <i class='bx bx-list-ul icon'></i>
                             <span class="text nav-text">dashboard</span>
-                        </a> 
-                        @endauth
-                    </li>  
+                        </a>
+                    </li>
+                    @endif
+                    @endauth
+
+                    @auth
+                    @if(Auth::user() && (Auth::user()->isAdmin() || Auth::user()->isPublisher()))
+                    <li class="nav-link">
+                        <a href="{{route('mipublisher')}}">
+                            <i class='bx bx-list-plus icon'></i>
+                            <span class="text nav-text">campaña</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endauth
+
+
 
                     <li class="nav-link">
                         @guest
@@ -279,10 +294,11 @@
         padding: 10px;
     }
 
-    .search-container{
+    .search-container {
         margin-left: 70px;
     }
-    .search-input{
+
+    .search-input {
         height: 35px;
         background-color: var(--primary-color-light);
         color: var(--text-color);
@@ -293,7 +309,7 @@
         padding: 5px;
     }
 
-    .search-button{
+    .search-button {
         width: 35px;
         height: 35px;
         background-color: var(--primary-color-light2);
@@ -307,7 +323,7 @@
         margin-top: 5px;
     }
 
-    .category-select{
+    .category-select {
         height: 35px;
         background-color: var(--primary-color-light);
         color: var(--text-color);
@@ -315,7 +331,6 @@
         outline: none;
         border-style: none;
         border-radius: 5px;
-        padding: 5px;   
+        padding: 5px;
     }
-
-  </style>
+</style>
