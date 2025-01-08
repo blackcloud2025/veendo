@@ -13,7 +13,7 @@ export default defineConfig({
                 'resources/css/payment.css',
                 'resources/css/profile.css',
                 'resources/css/Prodcard.css',
-                
+                'resources/css/dashboard.css',
                 
                 //scripts
                 'resources/js/app.js',

@@ -43,8 +43,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //borrar productos del usuario borrado
     public function products()
     {
         return $this->hasMany(Product::class)->onDelete('cascade');
+    }
+
+    //mostar productos del usuario en el dashboard 
+    public function userProducts()
+    {
+        return $this->hasMany(Product::class);
     }
 }

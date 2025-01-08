@@ -27,6 +27,12 @@ Route::get('/', function () {
 Route::get('/product/{id}', [ProductController::class, 'show'])->name("product.show");
 
 //vista de historial decompra de usuario
+Route::get('dasboard', function () {
+    return view('dashboard');
+})->name("mi dashboard");
+
+
+//vista de historial decompra de usuario
 Route::get('History', function () {
     return view('Historypage');
 })->name("Historial");
@@ -82,11 +88,6 @@ Route::get('logout', [AuthController::class, 'logout'])->name("logout.store");
 //rutas de manejo de prodctos
 Route::middleware(['auth'])->group(function () {
 
-    //vista de invitacion de usuario
-Route::get('dashboard', function () {
-    return view('Dashboard');
-})->name("midashboard");
-
     //ruta indice de productos
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
@@ -123,4 +124,11 @@ Route::get('dashboard', function () {
 
     // Eliminar usuario
     Route::delete('perfil/{user}', [AuthController::class, 'destroy'])->name('miperfil.destroy');
+
+    //vista dashboard
+    Route::get('dashboard', [AuthController::class, 'dashboard'])->name('midashboard');
+
+    //edicion y borrado desde el dashboard
+    Route::get('/users/{user}/edit', [AuthController::class, 'edit'])->name('users.edit');
+    Route::delete('/users/{user}', [AuthController::class, 'destroy'])->name('users.destroy');
 });

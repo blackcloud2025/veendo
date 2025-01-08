@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+
+    public function dashboard()
+    {
+        $users = User::with('userProducts')->get();
+        return view('dashboard', compact('users'));
+    }
+
+
+
+
     public function login(Request $request)
     {
         $validador = Validator::make($request->all(), [
