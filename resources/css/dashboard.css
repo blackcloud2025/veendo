@@ -48,7 +48,7 @@ h1 {
     padding: 0.75rem;
     text-align: left;
     color: var(--text-color);
-    border-bottom: 2px solid var(--navbar-color);
+    border-bottom: 4px solid var(--navbar-color);
 }
 
 .table th {
@@ -74,6 +74,7 @@ h1 {
     transition: all 0.15s ease-in-out;
     cursor: pointer;
     border: 1px solid transparent;
+    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .btn-sm {
