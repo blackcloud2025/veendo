@@ -25,7 +25,10 @@
                     <textarea id="description" name="description" required class="form-control"></textarea>
                 </div>
             <div class="widgetbx">
-            <button  class="buttonH">main banner #1.</button>    
+            <button  class="buttonH">
+            <img loading="lazy" clr src="{{asset('images/banner.png')}}">
+            <span>Main banner#1</span>
+            </button>    
             <button  class="buttonV">L banner #2.</button>
             <button class="minispacer"></button>
             <button  class="buttonVR">R banner #3.</button>
