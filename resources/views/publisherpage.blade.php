@@ -26,14 +26,17 @@
                 </div>
             <div class="widgetbx">
             <button  class="buttonH">
-            <img loading="lazy" clr src="{{asset('images/banner.png')}}">
-            <span>Main banner#1</span>
+            <img loading="lazy" clr src="{{asset('images/minibanner3.jpg')}}">
             </button>    
-            <button  class="buttonV">L banner #2.</button>
+            <button  class="buttonV">
+            <img loading="lazy" clr src="{{asset('images/minibanner4.png')}}">
+            </button>
             <button class="minispacer"></button>
-            <button  class="buttonVR">R banner #3.</button>
+            <button  class="buttonVR">
+            <img loading="lazy" clr src="{{asset('images/minibanner5.png')}}">   
+            </button>
             </div>
-            <div class="widgetbx">
+            <div class="label-box">
                 <p>escoja el baner donde publicara su campania recuerde que casa uno tiene diferente precio.</p>
             </div>
 

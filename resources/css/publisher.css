@@ -9,7 +9,7 @@
 
 .form-wrapper {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     background-color: var(--navbar-color);
     padding: 20px;
     border-radius: 8px;
@@ -65,6 +65,7 @@
 textarea.form-control {
     min-height: 100px;
     resize: vertical;
+    color: var(--text-color);
 }
 
 .upload-area {
@@ -72,10 +73,11 @@ textarea.form-control {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--text-color);
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .upload-icon {
@@ -86,57 +88,79 @@ textarea.form-control {
 
 .upload-text {
     font-size: 16px;
-    color: #333;
+    color: var(--text-color);
 }
 
 .upload-hint {
     font-size: 14px;
-    color: #999;
+    color: var(--text-color);
 }
 
 .widgetbx {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.buttonH, .buttonV, .buttonVR {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 240px;
-    position: relative;
-    overflow: hidden;
+    background-color: var(--body-color);
+    min-width: 240px;
+    max-width: 350px;
+    height: 240px;
+    padding: 8px;
+    border-radius: 7px;
     box-shadow: 0px 0px 4px var(--shadow-color);
-}
-
-.buttonH img, .buttonV img, .buttonVR img {
-    max-width: 100%;
-    height: auto;
+    gap: 8px;
 }
 
 .buttonH {
-    background-color: #007bff;
-    color: #fff;
+    display: flex;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 223px;
+    height: 80px;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px var(--shadow-color);
+    margin-bottom: 8px;
 }
 
-.buttonV {
-    background-color: #28a745;
-    color: #fff;
+.buttonH img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
 }
 
-.buttonVR {
-    background-color: #dc3545;
-    color: #fff;
+.buttonV img{
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit:cover;
+}
+
+.buttonVR img{
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit:cover;
+}
+
+.buttonV{
+width: 50px;
+height: 130px;
+border-radius: 7px;
+border: none;
+box-shadow: 0px 0px 4px var(--shadow-color);
+}
+
+.buttonVR{
+    width: 50px;
+    height: 130px;
+    border-radius: 7px;
+    border: none; 
+    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .minispacer {
-    flex: 1;
+    width: 115px;
+    height: 90px;
+    background-color: var(--body-color);
+    border-radius: 7px;
+    border: none;
 }
 
 .submit-wrapper {
@@ -152,6 +176,7 @@ textarea.form-control {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .submit-button:hover {
