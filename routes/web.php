@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdController;
 use App\Models\Product;
+use App\Models\Ad;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\StripePaymentController;
 
@@ -20,7 +22,9 @@ Route::get('/', function () {
         })
         ->paginate(10);
 
-    return view('Homepage', ['products' => $products]);
+        $ads = Ad::where('banner_type', 'horizontal')->get(); // O el tipo que necesites
+
+    return view('Homepage', ['products' => $products,  'ads' => $ads]);
 })->name("Home");
 
 //vista de muestra de productos individual y relacionados
@@ -31,10 +35,14 @@ Route::get('dasboard', function () {
     return view('dashboard');
 })->name("mi dashboard");
 
-//vista dashboard
-Route::get('publisherpage', function () {
+
+// Ruta para mostrar el formulario 
+Route::get('/subir-publicidad', function () {
     return view('publisherpage');
-})->name("mipublisher");
+})->name('ads.create');
+
+// Ruta para procesar el formulario
+Route::post('/subir-publicidad', [AdController::class, 'store'])->name('ads.store');
 
 
 //vista de historial decompra de usuario

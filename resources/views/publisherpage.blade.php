@@ -3,17 +3,21 @@
 @section('titulo', 'Dashboard')
 
 @section('styles')
-    @vite('resources/css/publisher.css')
+@vite('resources/css/publisher.css')
 @endsection
 
 @section('Contenido')
 <div class="containerform">
     <div class="form-wrapper">
         <h1 class="page-title">Subir Publicidad</h1>
-        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('ads.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-grid">
-                <!-- Nombre del Producto -->
+
+                <!-- Agrega un campo oculto para el tipo de banner -->
+                <input type="hidden" name="banner_type" id="selected_banner_type" value="horizontal">
+
+                <!-- Nombre de la publicidad -->
                 <div class="form-group full-width">
                     <label class="form-label" for="name">Nombe de publicidad (opcional). </label>
                     <input type="text" id="name" name="name" required class="form-control">
@@ -24,21 +28,21 @@
                     <label class="form-label" for="description">Descripción (opcional).</label>
                     <textarea id="description" name="description" required class="form-control"></textarea>
                 </div>
-            <div class="widgetbx">
-            <button  class="buttonH">
-            <img loading="lazy" clr src="{{asset('images/minibanner3.jpg')}}">
-            </button>    
-            <button  class="buttonV">
-            <img loading="lazy" clr src="{{asset('images/minibanner4.png')}}">
-            </button>
-            <button class="minispacer"></button>
-            <button  class="buttonVR">
-            <img loading="lazy" clr src="{{asset('images/minibanner5.png')}}">   
-            </button>
-            </div>
-            <div class="label-box">
-                <p>escoja el baner donde publicara su campania recuerde que casa uno tiene diferente precio.</p>
-            </div>
+                <div class="widgetbx">
+                    <button class="buttonH" data-type="horizontal">
+                        <img loading="lazy" clr src="{{asset('images/minibanner3.jpg')}}">
+                    </button>
+                    <button class="buttonV" data-type="vertical">
+                        <img loading="lazy" clr src="{{asset('images/minibanner4.png')}}">
+                    </button>
+                    <button class="minispacer"></button>
+                    <button class="buttonVR" data-type="vvertical_right">
+                        <img loading="lazy" clr src="{{asset('images/minibanner5.png')}}">
+                    </button>
+                </div>
+                <div class="label-box">
+                    <p>escoja el baner donde publicara su campania recuerde que casa uno tiene diferente precio.</p>
+                </div>
 
                 <!-- Subida de Imágenes -->
                 <div class="form-group full-width">
@@ -63,4 +67,8 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/uploadImageBox.js')
 @endsection

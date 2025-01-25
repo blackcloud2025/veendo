@@ -98,7 +98,7 @@
                     @auth
                     @if(Auth::user() && (Auth::user()->isAdmin() || Auth::user()->isPublisher()))
                     <li class="nav-link">
-                        <a href="{{route('mipublisher')}}">
+                        <a href="{{route('ads.create')}}">
                             <i class='bx bx-list-plus icon'></i>
                             <span class="text nav-text">campaña</span>
                         </a>

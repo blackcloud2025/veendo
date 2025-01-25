@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SliderImage extends Model
+class Ad extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'image_path',
-        'title',
+        'name',
         'description',
-        'order',
-        'active'
+        'image_path',
+        'banner_type'
     ];
 }

@@ -14,18 +14,13 @@
 
 <div class="container-carousel">
     <div class="carruseles" id="slider">
+
+        @foreach($ads as $ad)
         <section class="slider-section">
-            <img loading="lazy" clr src="{{asset('images/Veendologo.png')}}">
+            <img loading="lazy" src="{{ Storage::url($ad->image_path) }}" alt="{{ $ad->name }}">
         </section>
-        <section class="slider-section">
-            <img loading="lazy" clr src="{{asset('images/invitbg.jpeg')}}">
-        </section>
-        <section class="slider-section">
-            <img loading="lazy" clr src="{{asset('images/producto.jpg')}}">
-        </section>
-        <section class="slider-section">
-            <img loading="lazy" clr src="{{asset('images/Veendologo.jpg')}}">
-        </section>
+        @endforeach
+
     </div>
     <div class="blur-overlay"></div>
     <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
@@ -97,7 +92,7 @@
     <a href="{{ $products->nextPageUrl() }}" class="btn">Siguiente</a> @else
     <span class="btn disabled">Siguiente.</span> @endif
 
- <style>
+    <style>
         .pagination-buttons {
             display: flex;
             justify-content: center;
