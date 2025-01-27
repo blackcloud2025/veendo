@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ads', function (Blueprint $table) {
-            Schema::create('ads', function (Blueprint $table) {
-                $table->id();
-                $table->string('name')->nullable();
-                $table->text('description')->nullable();
-                $table->string('image_path');
-                $table->enum('banner_type', ['horizontal', 'vertical', 'vertical_right']);
-                $table->timestamps();
-            });
+            $table->id();
+            $table->unsignedBigInteger('user_id')->default(1); // Definir la columna correctamente
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('image_path');
+            $table->enum('banner_type', ['horizontal', 'vertical', 'vertical_right']);
+            $table->timestamps();
         });
     }
 

@@ -32,11 +32,11 @@
                     <button class="buttonH" data-type="horizontal">
                         <img loading="lazy" clr src="{{asset('images/minibanner3.jpg')}}">
                     </button>
-                    <button class="buttonV" data-type="vertical">
+                    <button class="buttonV" data-type="vertical_left">
                         <img loading="lazy" clr src="{{asset('images/minibanner4.png')}}">
                     </button>
                     <button class="minispacer"></button>
-                    <button class="buttonVR" data-type="vvertical_right">
+                    <button class="buttonVR" data-type="vertical_right">
                         <img loading="lazy" clr src="{{asset('images/minibanner5.png')}}">
                     </button>
                 </div>

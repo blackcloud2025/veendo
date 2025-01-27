@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
-Product::whereNull('user_id')->update(['user_id' => 1]); // Usa el ID de un usuario existente
+
 
 class ProductController extends Controller
 {
@@ -50,6 +50,7 @@ class ProductController extends Controller
         }
 
         $validador = Validator::make($request->all(), [
+
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric',

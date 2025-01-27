@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Ad;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +21,7 @@ class AdController extends Controller
             'description' => 'nullable|string',
             'images' => 'required|array|max:3',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:10240',
-            'banner_type' => 'required|in:horizontal,vertical,vertical_right'
+            'banner_type' => 'required|in:horizontal,vertical_left,vertical_right'
         ]);
 
         if ($validador->fails()) {

@@ -61,8 +61,10 @@
 
 </div>
 
+<div class="vertical-left-banner"></div>
 
 <div class="contenedor">
+    
     <div class="product-container">
         @foreach($products as $product)
         <div class="product-card" data-id="{{$product->id}}">
@@ -83,6 +85,7 @@
         @endforeach
     </div>
 </div>
+
 
 <!-- Botones de paginación -->
 <div class="pagination-buttons">
@@ -119,6 +122,8 @@
         .pagination-buttons .btn:hover {
             background-color: #e9ecef;
         }
+
+
     </style>
 
     @endsection
