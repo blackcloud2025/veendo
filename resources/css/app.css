@@ -548,7 +548,7 @@ body.dark .home .text {
 }
 
 
-/* ===== tarjetas de productos. ===== */
+/* ===== tarjetas de productos publicados y paginados. ===== */
 .contenedor {
     display: flex;
     justify-content: center;

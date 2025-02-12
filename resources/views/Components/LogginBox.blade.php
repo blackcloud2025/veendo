@@ -12,6 +12,22 @@
             <p>Unete para comprar y vender ya!</p>
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
+
+                <div class="cambox">
+                <li class="mode">
+                <div class="cam-on-off">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">light mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+                    <button> iniciar captura</button>
+
+                </div>
                 <div>
                     <label>
                         <i class='bx bx-user'></i>
