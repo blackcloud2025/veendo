@@ -13,6 +13,7 @@
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
                 
+                <!--
                 <div class="camera-box" style="margin-top: 1px;">
                 <video id="camera-feed" style="display: none;" autoplay></video>
                     <div class="toggle-switch">
@@ -24,6 +25,7 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
+                -->
 
                 <div alt="name">
                     <label>
@@ -92,6 +94,7 @@
             <form class="form form-login" novalidate method="POST" action="{{route('login.store')}}">
                 @csrf
 
+                 <!--
                 <div class="camera-box-1">
                 <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
                     <div class="toggle-switch">
@@ -103,7 +106,7 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
-                
+                -->
 
                 <div>
                     <label>
