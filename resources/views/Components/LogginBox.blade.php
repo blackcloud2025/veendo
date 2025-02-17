@@ -9,44 +9,64 @@
     <div class="form-information">
         <div class="form-information-childs">
             <h2>Crear una Cuenta</h2>
-            <p>Unete para comprar y vender ya!</p>
+            <p>¡Únete para comprar y vender ya!</p>
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
-
-                <div class="cambox">
-                <li class="mode">
-                <div class="cam-on-off">
-                    <i class='bx bx-moon icon moon'></i>
-                    <i class='bx bx-sun icon sun'></i>
+                
+                <div class="camera-box" style="margin-top: 1px;">
+                <video id="camera-feed" style="display: none;" autoplay></video>
+                    <div class="toggle-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="camera-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="toggle-label">IA reg cámara.</span>
+                        <i class='bx bx-camera'></i>
+                    </div>
                 </div>
-                <span class="mode-text text">light mode</span>
 
-                <div class="toggle-switch">
-                    <span class="switch"></span>
-                </div>
-            </li>
-                    <button> iniciar captura</button>
-
-                </div>
-                <div>
+                <div alt="name">
                     <label>
                         <i class='bx bx-user'></i>
                         <input type="text" placeholder="Nombre Usuario" name="name">
                     </label>
                 </div>
-                <div>
+
+                <div alt="phone">
+                    <label>
+                        <i class='bx bx-phone'></i>
+                        <input type="phone" placeholder="Número de teléfono" name="phone">
+                    </label>
+                </div>
+
+                <div alt="email">
                     <label>
                         <i class='bx bx-envelope'></i>
                         <input type="email" placeholder="Correo Electronico" name="email">
                     </label>
                 </div>
-                <div>
+                
+                <div alt="password">
                     <label>
                         <i class='bx bx-lock-alt'></i>
-                        <input type="password" placeholder="Contraseña" name="password">
+                        <input type="password" placeholder="Contraseña " name="password">
                     </label>
                 </div>
-                <p>Ponga al menos una letra mayuscula y un numero.</p>
+                
+                <div alt="idcard">
+                    <label>
+                    <i class='bx bx-id-card'></i>
+                        <input type="identify" placeholder="Número de identificacion" name="identify">
+                    </label>
+                </div>
+
+
+                <div alt="adress">
+                    <label>
+                        <i class='bx bx-map'></i>
+                        <input type="home adress" placeholder="Direccion fisica" name="adress">
+                    </label>
+                </div>
 
                 <input type="submit" value="Registrarse">
                 <div class="alerta-error">Todos los campos son obligatorios</div>
@@ -71,6 +91,20 @@
             <p> Inicie Sesión con su cuenta.</p>
             <form class="form form-login" novalidate method="POST" action="{{route('login.store')}}">
                 @csrf
+
+                <div class="camera-box-1">
+                <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
+                    <div class="toggle-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="camera-toggle-1">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="toggle-label">IA reg cámara.</span>
+                        <i class='bx bx-camera'></i>
+                    </div>
+                </div>
+                
+
                 <div>
                     <label>
                         <i class='bx bx-envelope'></i>
