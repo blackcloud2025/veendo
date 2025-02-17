@@ -43,10 +43,8 @@
         </div>
         <div class='imgbar toggle'>
             <div class="img-logo">
-                <img loading="lazy" clr src="{{asset('images/Veendologo.png')}}">
+                <img loading="lazy" clr src="{{asset('images/VeendoLogoNewColor.png')}}" style="width: 48px;">
             </div>
-
-
     </header>
 
     <div class="menu-bar">
