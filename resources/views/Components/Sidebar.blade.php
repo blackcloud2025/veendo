@@ -43,7 +43,7 @@
         </div>
         <div class='imgbar toggle'>
             <div class="img-logo">
-                <img loading="lazy" clr src="{{asset('images/VeendoLogoNewColor.png')}}" style="width: 48px;">
+                <img loading="lazy" clr src="{{asset('images/VeendoLogoNewColor.png')}}" style="width: 50px;">
             </div>
     </header>
 

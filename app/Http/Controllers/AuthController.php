@@ -19,9 +19,6 @@ class AuthController extends Controller
         return view('dashboard', compact('users'));
     }
 
-
-
-
     public function login(Request $request)
     {
         $validador = Validator::make($request->all(), [
@@ -55,12 +52,36 @@ class AuthController extends Controller
     public function registro(Request $request)
     {
         $validador = Validator::make($request->all(), [
-            'name' => 'required',
+            'name' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+
             'email' => 'required|email|unique:users,email',
+
             'password' => [
                 'required',
                 'min:8',
                 'regex:/^(?=.*[A-Z])(?=.*[0-9]).+$/'
+            ],
+
+            'phone' => [
+                'required',
+                'min:10',
+                'regex:/^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$/' // Formato de teléfono (123) 456-7890 o 123-456-7890
+            ],
+
+            'adress' => [
+                'required',
+                'string',
+                'max:255'
+            ],
+
+            'identificacion' => [
+                'required',
+                'max:255',
+                'regex:/^[0-9]+$/' // Solo números
             ]
         ]);
 
@@ -76,6 +97,9 @@ class AuthController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
+            $user->phone = $request->phone;
+            $user->adress = $request->adress;
+            $user->identificacion = $request->identificacion;
             $user->save();
             $request->session()->regenerate();
             Auth::login($user);
@@ -120,12 +144,37 @@ class AuthController extends Controller
     public function update(Request $request, User $user)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'name' => [
+                'required',
+                'string',
+                'max:255'
+            ],
+
             'email' => 'required|email|unique:users,email,' . $user->id,
+
             'password' => [
                 'nullable',
                 'min:8',
                 'regex:/^(?=.*[A-Z])(?=.*[0-9]).+$/'
+            ],
+
+            'phone' => [
+                'required',
+                'min:10',
+                'regex:/^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$/'
+            ],
+
+
+            'adress' => [
+                'required',
+                'string',
+                'max:255'
+            ],
+
+            'identificacion' => [
+                'required',
+                'max:255',
+                'regex:/^[0-9]+$/' // Solo números
             ]
         ]);
 
@@ -142,19 +191,24 @@ class AuthController extends Controller
             $userData = [
                 'name' => $request->name,
                 'email' => $request->email,
+                'phone' => $request->phone,
+                'adress' => $request->adress,
+                'identificacion' => $request->identificacion
             ];
 
 
             // Siempre actualizamos estos campos
             $user->name = $request->name;
             $user->email = $request->email;
-
-
+            $user->phone = $request->phone;
+            $user->adress = $request->adress;
+            $user->identificacion = $request->identificacion;
 
             // Solo actualizamos la contraseña si se proporcionó una nueva
             if ($request->filled('password')) {
                 $userData['password'] = Hash::make($request->password);
             }
+
 
             $user->update($userData);
 

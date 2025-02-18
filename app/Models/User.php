@@ -21,7 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'phone',
+        'adress',
+        'identificacion',
     ];
 
     /**
@@ -54,8 +57,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class);
     }
-
-
 
     // checa  si es administrador
     public function isAdmin()

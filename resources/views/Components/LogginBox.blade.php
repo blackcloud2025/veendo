@@ -13,7 +13,7 @@
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
                 
-                <!--
+                
                 <div class="camera-box" style="margin-top: 1px;">
                 <video id="camera-feed" style="display: none;" autoplay></video>
                     <div class="toggle-switch">
@@ -25,7 +25,7 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
-                -->
+                
 
                 <div alt="name">
                     <label>
@@ -37,7 +37,7 @@
                 <div alt="phone">
                     <label>
                         <i class='bx bx-phone'></i>
-                        <input type="phone" placeholder="Número de teléfono" name="phone">
+                        <input type="phone" placeholder="teléfono ej:123-456-7890" name="phone">
                     </label>
                 </div>
 
@@ -51,14 +51,14 @@
                 <div alt="password">
                     <label>
                         <i class='bx bx-lock-alt'></i>
-                        <input type="password" placeholder="Contraseña " name="password">
+                        <input type="password" placeholder="Contraseña min 1 num y una mayuscula " name="password">
                     </label>
                 </div>
                 
                 <div alt="idcard">
                     <label>
                     <i class='bx bx-id-card'></i>
-                        <input type="identify" placeholder="Número de identificacion" name="identify">
+                        <input type="identificacion" placeholder="Número de identificacion" name="identificacion">
                     </label>
                 </div>
 
@@ -66,7 +66,7 @@
                 <div alt="adress">
                     <label>
                         <i class='bx bx-map'></i>
-                        <input type="home adress" placeholder="Direccion fisica" name="adress">
+                        <input type="adress" placeholder="Direccion fisica" name="adress">
                     </label>
                 </div>
 
@@ -94,7 +94,7 @@
             <form class="form form-login" novalidate method="POST" action="{{route('login.store')}}">
                 @csrf
 
-                 <!--
+                 
                 <div class="camera-box-1">
                 <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
                     <div class="toggle-switch">
@@ -106,7 +106,7 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
-                -->
+                
 
                 <div>
                     <label>
