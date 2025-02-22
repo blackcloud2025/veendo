@@ -12,18 +12,20 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-
+    // Mostrar formulario dashboard
     public function dashboard()
     {
         $users = User::with('userProducts')->get();
         return view('dashboard', compact('users'));
     }
 
+    // Mostrar formulario de inicio de sesión
     public function login(Request $request)
     {
         $validador = Validator::make($request->all(), [
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'face_descriptor' => 'string'
         ]);
 
         if ($validador->fails()) {
@@ -38,6 +40,22 @@ class AuthController extends Controller
         $user = User::where('email', $email)->first();
 
         if ($user && Hash::check($pass, $user->password)) {
+
+            if ($request->face_descriptor && $user->face_descriptor) {
+                $savedDescriptor = json_decode($user->face_descriptor);
+                $newDescriptor = json_decode($request->face_descriptor);
+
+                $distance = $this->calculateFaceDistance($savedDescriptor, $newDescriptor);
+                $threshold = 0.6;
+
+                if ($distance >= $threshold) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Verificación facial fallida'
+                    ]);
+                }
+            }
+
             $request->session()->regenerate();
             Auth::login($user);
             return redirect()->route('Home');
@@ -49,9 +67,24 @@ class AuthController extends Controller
             ->withInput();
     }
 
+    // Función para calcular la distancia entre dos vectores
+    private function calculateFaceDistance($descriptor1, $descriptor2)
+{
+    if (!is_array($descriptor1) || !is_array($descriptor2)) {
+        return 1.0; // Distancia máxima si los descriptores no son válidos
+    }
+
+    $sum = 0;
+    for ($i = 0; $i < count($descriptor1); $i++) {
+        $diff = $descriptor1[$i] - $descriptor2[$i];
+        $sum += $diff * $diff;
+    }
+    return sqrt($sum);
+}
+    //funcion de registro de usuario
     public function registro(Request $request)
     {
-        $validador = Validator::make($request->all(), [
+                $validador = Validator::make($request->all(), [
             'name' => [
                 'required',
                 'string',
@@ -82,10 +115,19 @@ class AuthController extends Controller
                 'required',
                 'max:255',
                 'regex:/^[0-9]+$/' // Solo números
-            ]
+            ],
+            'face_descriptor' => ['nullable', function ($attribute, $value, $fail) {
+                if ($value !== null) {
+                    $decoded = json_decode($value, true);
+                    if (json_last_error() !== JSON_ERROR_NONE) {
+                        $fail('The face descriptor must be a valid JSON string.');
+                    }
+                }
+            }]
         ]);
 
         if ($validador->fails()) {
+            
             return response()->json([
                 'success' => false,
                 'errors' => $validador->errors()
@@ -100,13 +142,14 @@ class AuthController extends Controller
             $user->phone = $request->phone;
             $user->adress = $request->adress;
             $user->identificacion = $request->identificacion;
+            $user->face_descriptor = $request->face_descriptor;
             $user->save();
             $request->session()->regenerate();
             Auth::login($user);
 
             return redirect()->route('Home');
         } catch (\Throwable $th) {
-            return response()->json([
+                        return response()->json([
                 'success' => false,
                 'errors' => $th->getMessage(),
                 'message' => 'Error al registrar en la DB'

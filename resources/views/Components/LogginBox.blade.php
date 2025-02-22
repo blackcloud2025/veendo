@@ -12,10 +12,9 @@
             <p>¡Únete para comprar y vender ya!</p>
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
-                
-                
+                <input type="hidden" name="face_descriptor" id="face-descriptor-register">
                 <div class="camera-box" style="margin-top: 1px;">
-                <video id="camera-feed" style="display: none;" autoplay></video>
+                    <video id="camera-feed" style="display: none;" autoplay></video>
                     <div class="toggle-switch">
                         <label class="switch">
                             <input type="checkbox" id="camera-toggle">
@@ -25,7 +24,7 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
-                
+
 
                 <div alt="name">
                     <label>
@@ -47,17 +46,17 @@
                         <input type="email" placeholder="Correo Electronico" name="email">
                     </label>
                 </div>
-                
+
                 <div alt="password">
                     <label>
                         <i class='bx bx-lock-alt'></i>
                         <input type="password" placeholder="Contraseña min 1 num y una mayuscula " name="password">
                     </label>
                 </div>
-                
+
                 <div alt="idcard">
                     <label>
-                    <i class='bx bx-id-card'></i>
+                        <i class='bx bx-id-card'></i>
                         <input type="identificacion" placeholder="Número de identificacion" name="identificacion">
                     </label>
                 </div>
@@ -87,17 +86,17 @@
             <input type="button" value="Registrarse" id="sign-up">
         </div>
     </div>
+    
     <div class="form-information">
         <div class="form-information-childs">
             <h2>Iniciar Sesión</h2>
             <p> Inicie Sesión con su cuenta.</p>
             <form class="form form-login" novalidate method="POST" action="{{route('login.store')}}">
                 @csrf
-
-                 
+                <input type="hidden" name="face_descriptor">
                 <div class="camera-box-1">
-                <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
-                    <div class="toggle-switch">
+                    <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
+                        <div class="toggle-switch">
                         <label class="switch">
                             <input type="checkbox" id="camera-toggle-1">
                             <span class="slider round"></span>
@@ -106,7 +105,7 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
-                
+
 
                 <div>
                     <label>

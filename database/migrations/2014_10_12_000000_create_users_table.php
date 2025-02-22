@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string('adress', 255)->nullable();
             $table->string('identificacion', 50);
             $table->rememberToken();
+            $table->longText('face_descriptor')->nullable();
             $table->timestamps();
         });
     }

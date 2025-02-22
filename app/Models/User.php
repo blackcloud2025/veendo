@@ -25,6 +25,7 @@ class User extends Authenticatable
         'phone',
         'adress',
         'identificacion',
+        'face_descriptor',
     ];
 
     /**
@@ -35,6 +36,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'face_descriptor'
     ];
 
     /**
@@ -61,7 +63,7 @@ class User extends Authenticatable
     // checa  si es administrador
     public function isAdmin()
     {
-        return $this->role === 'admin'; 
+        return $this->role === 'admin';
     }
 
     //checa si es publicador

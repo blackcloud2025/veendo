@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Ad;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\StripePaymentController;
+use Illuminate\Support\Facades\File;  // Add this at the top with other imports
 
 //vista principarl, indexado y buscado de productos
 Route::get('/', function () {
@@ -144,4 +145,13 @@ Route::middleware(['auth'])->group(function () {
     //edicion y borrado desde el dashboard
     Route::get('/users/{user}/edit', [AuthController::class, 'edit'])->name('users.edit');
     Route::delete('/users/{user}', [AuthController::class, 'destroy'])->name('users.destroy');
+});
+
+Route::get('/check-models', function() {
+    $modelPath = public_path('models');
+    $files = File::files($modelPath);
+    return [
+        'path_exists' => File::exists($modelPath),
+        'files' => collect($files)->map(fn($file) => $file->getFilename())->toArray()
+    ];
 });
