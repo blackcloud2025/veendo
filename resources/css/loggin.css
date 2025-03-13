@@ -254,7 +254,6 @@
     background-color: var(--body-color);
     margin-bottom: 15px;
     border-radius: 7px;
-    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .toggle-switch {
@@ -333,7 +332,6 @@ input:checked + .slider:before {
     background-color: var(--body-color);
     margin-bottom: 15px;
     border-radius: 7px;
-    box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
 .bx-camera {
