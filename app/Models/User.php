@@ -21,11 +21,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+<<<<<<< HEAD
         'role',
         'phone',
         'adress',
         'identificacion',
         'face_descriptor',
+=======
+        'role'
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
     ];
 
     /**
@@ -59,6 +63,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class);
     }
+
+
 
     // checa  si es administrador
     public function isAdmin()

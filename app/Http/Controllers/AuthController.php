@@ -19,7 +19,13 @@ class AuthController extends Controller
         return view('dashboard', compact('users'));
     }
 
+<<<<<<< HEAD
     // Mostrar formulario de inicio de sesión
+=======
+
+
+
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
     public function login(Request $request)
     {
         $validador = Validator::make($request->all(), [
@@ -84,6 +90,7 @@ class AuthController extends Controller
     //funcion de registro de usuario
     public function registro(Request $request)
     {
+<<<<<<< HEAD
                 $validador = Validator::make($request->all(), [
             'name' => [
                 'required',
@@ -91,12 +98,16 @@ class AuthController extends Controller
                 'max:255',
             ],
 
+=======
+        $validador = Validator::make($request->all(), [
+            'name' => 'required',
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
             'email' => 'required|email|unique:users,email',
-
             'password' => [
                 'required',
                 'min:8',
                 'regex:/^(?=.*[A-Z])(?=.*[0-9]).+$/'
+<<<<<<< HEAD
             ],
 
             'phone' => [
@@ -124,6 +135,9 @@ class AuthController extends Controller
                     }
                 }
             }]
+=======
+            ]
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
         ]);
 
         if ($validador->fails()) {
@@ -139,10 +153,13 @@ class AuthController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
+<<<<<<< HEAD
             $user->phone = $request->phone;
             $user->adress = $request->adress;
             $user->identificacion = $request->identificacion;
             $user->face_descriptor = $request->face_descriptor;
+=======
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
             $user->save();
             $request->session()->regenerate();
             Auth::login($user);
@@ -187,37 +204,12 @@ class AuthController extends Controller
     public function update(Request $request, User $user)
     {
         $validator = Validator::make($request->all(), [
-            'name' => [
-                'required',
-                'string',
-                'max:255'
-            ],
-
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
-
             'password' => [
                 'nullable',
                 'min:8',
                 'regex:/^(?=.*[A-Z])(?=.*[0-9]).+$/'
-            ],
-
-            'phone' => [
-                'required',
-                'min:10',
-                'regex:/^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$/'
-            ],
-
-
-            'adress' => [
-                'required',
-                'string',
-                'max:255'
-            ],
-
-            'identificacion' => [
-                'required',
-                'max:255',
-                'regex:/^[0-9]+$/' // Solo números
             ]
         ]);
 
@@ -234,24 +226,19 @@ class AuthController extends Controller
             $userData = [
                 'name' => $request->name,
                 'email' => $request->email,
-                'phone' => $request->phone,
-                'adress' => $request->adress,
-                'identificacion' => $request->identificacion
             ];
 
 
             // Siempre actualizamos estos campos
             $user->name = $request->name;
             $user->email = $request->email;
-            $user->phone = $request->phone;
-            $user->adress = $request->adress;
-            $user->identificacion = $request->identificacion;
+
+
 
             // Solo actualizamos la contraseña si se proporcionó una nueva
             if ($request->filled('password')) {
                 $userData['password'] = Hash::make($request->password);
             }
-
 
             $user->update($userData);
 

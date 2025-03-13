@@ -30,17 +30,14 @@
             <!-- Vista de Información -->
             <div id="profile-tab" class="tab-content active">
                 <div class="info-grid">
-
                     <div class="info-item">
                         <div class="info-label">Nombre Completo</div>
                         <div class="info-value">{{ $user->name }}</div>
                     </div>
-
                     <div class="info-item">
                         <div class="info-label">Correo Electrónico</div>
                         <div class="info-value">{{ $user->email }}</div>
                     </div>
-
                     <div class="info-item">
                         <div class="info-label">Rol</div>
                         <div class="info-value">{{ ucfirst($user->role) }}</div>
@@ -49,21 +46,8 @@
                         <div class="info-label">Miembro desde</div>
                         <div class="info-value">{{ $user->created_at->format('d/m/Y') }}</div>
                     </div>
-
-                    <div class="info-item">
-                        <div class="info-label">Número de telefono</div>
-                        <div class="info-value">{{ $user->phone }}</div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-label">Número de identificación</div>
-                        <div class="info-value">{{ $user->identificacion }}</div>
-                    </div>
-                    
                 </div>
             </div>
-
-
 
              <!-- Formulario de Edición -->
              <div id="edit-tab" class="tab-content">
@@ -103,37 +87,11 @@
                         <input type="password" id="password_confirmation" name="password_confirmation" class="form-input">
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label" for="phone">Nuevo numero de telefono</label>
-                        <input type="phone" id="phone" name="phone" class="form-input" value="{{ old('phone', $user->phone) }}">
-                        @error('phone')
-                            <p class="error-text">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="identificacion">Número de identificación</label>
-                        <input type="identificacion" id="identificacion" name="identificacion" class="form-input" value="{{ old('identificacion', $user->identificacion) }}">
-                        @error('identificacion')
-                            <p class="error-text">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                    <label class="form-label" for="adress">Direccion fisica</label>
-                    <input type="adress" id="adress" name="adress" class="form-input" value="{{ old('adress', $user->adress) }}">
-                    @error('adress')
-                        <p class="error-text">{{ $message }}</p>
-                    @enderror
-                    </div>
-
                     <div style="text-align: right;">
                         <button type="submit" class="button button-primary">Guardar Cambios</button>
                     </div>
                 </form>
             </div>
-
-        
 
             <!-- Zona de Peligro -->
             <div class="danger-zone">

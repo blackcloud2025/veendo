@@ -12,7 +12,12 @@
             <p>¡Únete para comprar y vender ya!</p>
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
+<<<<<<< HEAD
                 <input type="hidden" name="face_descriptor" id="face-descriptor-register">
+=======
+                
+                <!--
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
                 <div class="camera-box" style="margin-top: 1px;">
                     <video id="camera-feed" style="display: none;" autoplay></video>
                     <div class="toggle-switch">
@@ -24,7 +29,11 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                -->
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 
                 <div alt="name">
                     <label>
@@ -36,7 +45,7 @@
                 <div alt="phone">
                     <label>
                         <i class='bx bx-phone'></i>
-                        <input type="phone" placeholder="teléfono ej:123-456-7890" name="phone">
+                        <input type="phone" placeholder="Número de teléfono" name="phone">
                     </label>
                 </div>
 
@@ -50,14 +59,19 @@
                 <div alt="password">
                     <label>
                         <i class='bx bx-lock-alt'></i>
-                        <input type="password" placeholder="Contraseña min 1 num y una mayuscula " name="password">
+                        <input type="password" placeholder="Contraseña " name="password">
                     </label>
                 </div>
 
                 <div alt="idcard">
                     <label>
+<<<<<<< HEAD
                         <i class='bx bx-id-card'></i>
                         <input type="identificacion" placeholder="Número de identificacion" name="identificacion">
+=======
+                    <i class='bx bx-id-card'></i>
+                        <input type="identify" placeholder="Número de identificacion" name="identify">
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
                     </label>
                 </div>
 
@@ -65,7 +79,7 @@
                 <div alt="adress">
                     <label>
                         <i class='bx bx-map'></i>
-                        <input type="adress" placeholder="Direccion fisica" name="adress">
+                        <input type="home adress" placeholder="Direccion fisica" name="adress">
                     </label>
                 </div>
 
@@ -93,7 +107,12 @@
             <p> Inicie Sesión con su cuenta.</p>
             <form class="form form-login" novalidate method="POST" action="{{route('login.store')}}">
                 @csrf
+<<<<<<< HEAD
                 <input type="hidden" name="face_descriptor">
+=======
+
+                 <!--
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
                 <div class="camera-box-1">
                     <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
                         <div class="toggle-switch">
@@ -105,7 +124,11 @@
                         <i class='bx bx-camera'></i>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+                -->
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 
                 <div>
                     <label>
