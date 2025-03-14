@@ -12,35 +12,7 @@
             <p>¡Únete para comprar y vender ya!</p>
             <form class="form form-register" method="POST" action="{{route('register.store')}}">
                 @csrf
-<<<<<<< HEAD
                 <input type="hidden" name="face_descriptor" id="face-descriptor-register">
-=======
-                
-                <!--
-<<<<<<< HEAD
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-=======
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-                <div class="camera-box" style="margin-top: 1px;">
-                    <video id="camera-feed" style="display: none;" autoplay></video>
-                    <div class="toggle-switch">
-                        <label class="switch">
-                            <input type="checkbox" id="camera-toggle">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="toggle-label">IA reg cámara.</span>
-                        <i class='bx bx-camera'></i>
-                    </div>
-                </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-                -->
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-=======
-                -->
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 
                 <div alt="name">
                     <label>
@@ -72,18 +44,8 @@
 
                 <div alt="idcard">
                     <label>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <i class='bx bx-id-card'></i>
                         <input type="identificacion" placeholder="Número de identificacion" name="identificacion">
-=======
-                    <i class='bx bx-id-card'></i>
-                        <input type="identify" placeholder="Número de identificacion" name="identify">
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-=======
-                    <i class='bx bx-id-card'></i>
-                        <input type="identify" placeholder="Número de identificacion" name="identify">
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
                     </label>
                 </div>
 
@@ -119,35 +81,8 @@
             <p> Inicie Sesión con su cuenta.</p>
             <form class="form form-login" novalidate method="POST" action="{{route('login.store')}}">
                 @csrf
-<<<<<<< HEAD
+
                 <input type="hidden" name="face_descriptor">
-=======
-
-                 <!--
-<<<<<<< HEAD
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-=======
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-                <div class="camera-box-1">
-                    <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
-                        <div class="toggle-switch">
-                        <label class="switch">
-                            <input type="checkbox" id="camera-toggle-1">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="toggle-label">IA reg cámara.</span>
-                        <i class='bx bx-camera'></i>
-                    </div>
-                </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-                -->
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-=======
-                -->
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 
                 <div>
                     <label>

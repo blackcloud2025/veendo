@@ -21,20 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'role',
         'phone',
         'adress',
         'identificacion',
-        'face_descriptor',
-=======
-        'role'
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-=======
-        'role'
->>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
-    ];
+        'email_verified_at',
+        'remember_token'
+
+ ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,8 +37,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
-        'face_descriptor'
+        'remember_token'
     ];
 
     /**

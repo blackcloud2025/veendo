@@ -24,9 +24,6 @@ export default defineConfig({
                 'resources/js/payment.js',
                 'resources/js/profile.js',
                 'resources/js/publisher.js',
-                'resources/js/facedetect.js',
-                'resources/js/face-api.min.js',
-
             ],
             refresh: true,
         }),
