@@ -43,7 +43,11 @@
         </div>
         <div class='imgbar toggle'>
             <div class="img-logo">
+<<<<<<< HEAD
                 <img loading="lazy" clr src="{{asset('images/Veendologo.png')}}">
+=======
+                <img loading="lazy" clr src="{{asset('images/VeendoLogoNewColor.png')}}" style="width: 48px;">
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
             </div>
 
 

@@ -20,7 +20,13 @@ class AuthController extends Controller
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Mostrar formulario de inicio de sesión
+=======
+
+
+
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 =======
 
 
@@ -91,6 +97,7 @@ class AuthController extends Controller
     public function registro(Request $request)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $validador = Validator::make($request->all(), [
             'name' => [
                 'required',
@@ -102,11 +109,16 @@ class AuthController extends Controller
         $validador = Validator::make($request->all(), [
             'name' => 'required',
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
+=======
+        $validador = Validator::make($request->all(), [
+            'name' => 'required',
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
             'email' => 'required|email|unique:users,email',
             'password' => [
                 'required',
                 'min:8',
                 'regex:/^(?=.*[A-Z])(?=.*[0-9]).+$/'
+<<<<<<< HEAD
 <<<<<<< HEAD
             ],
 
@@ -136,6 +148,8 @@ class AuthController extends Controller
                 }
             }]
 =======
+=======
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
             ]
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
         ]);
@@ -154,10 +168,13 @@ class AuthController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
 <<<<<<< HEAD
+<<<<<<< HEAD
             $user->phone = $request->phone;
             $user->adress = $request->adress;
             $user->identificacion = $request->identificacion;
             $user->face_descriptor = $request->face_descriptor;
+=======
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 =======
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
             $user->save();

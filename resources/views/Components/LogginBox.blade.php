@@ -17,6 +17,9 @@
 =======
                 
                 <!--
+<<<<<<< HEAD
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
+=======
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
                 <div class="camera-box" style="margin-top: 1px;">
                     <video id="camera-feed" style="display: none;" autoplay></video>
@@ -30,7 +33,11 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                -->
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 =======
                 -->
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
@@ -66,8 +73,13 @@
                 <div alt="idcard">
                     <label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <i class='bx bx-id-card'></i>
                         <input type="identificacion" placeholder="Número de identificacion" name="identificacion">
+=======
+                    <i class='bx bx-id-card'></i>
+                        <input type="identify" placeholder="Número de identificacion" name="identify">
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 =======
                     <i class='bx bx-id-card'></i>
                         <input type="identify" placeholder="Número de identificacion" name="identify">
@@ -112,6 +124,9 @@
 =======
 
                  <!--
+<<<<<<< HEAD
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
+=======
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
                 <div class="camera-box-1">
                     <video id="camera-feed-1" style="display: none; margin-top: 1px;" autoplay></video>
@@ -125,7 +140,11 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                -->
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 =======
                 -->
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)

@@ -22,11 +22,15 @@ class User extends Authenticatable
         'email',
         'password',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'role',
         'phone',
         'adress',
         'identificacion',
         'face_descriptor',
+=======
+        'role'
+>>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
 =======
         'role'
 >>>>>>> parent of 73caea6 (mejoramiento en data para el login falta implementar api para reconocimiento facial y mejorapara crud de usuario funcional)
