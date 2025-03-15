@@ -70,16 +70,25 @@
         <div class="product-card" data-id="{{$product->id}}">
             <div class="image-container">
                 @if($product->images->isNotEmpty())
-                <img loading="lazy" clr src="{{ Storage::url($product->images->first()->image_path) }}" alt="{{ $product->name }}">
+                <img loading="lazy" src="{{ Storage::url($product->images->first()->image_path) }}" alt="{{ $product->name }}">
                 @endif
             </div>
             <div class="product-details">
                 <p class="discount">OFF {{ $product->offer }}%</p>
                 <h3>{{ $product->name }}</h3>
                 <p class="price"> ${{ $product->price }}</p>
-                <a href="{{ route('product.show', ['id' => $product->id]) }}" class="btn">
-                    <span class="text nav-text">Saber más</span>
-                </a>
+                <div class="button-group">
+                    <a href="{{ route('product.show', ['id' => $product->id]) }}" class="btn">
+                        <span class="text nav-text">Saber más</span>
+                    </a>
+                    <form action="{{ route('cart.add') }}" method="POST" class="cart-form">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <button type="submit" class="btn btn-add-cart">
+                            <i class='bx bx-cart-add'></i> Agregar
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         @endforeach

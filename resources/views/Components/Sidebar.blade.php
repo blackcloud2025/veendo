@@ -86,6 +86,16 @@
                         @endauth
                     </li>
 
+
+                    @auth
+                    <li class="nav-link">
+                        <a href="{{route('carrito')}}">
+                            <i class='bx bx-cart icon'></i>
+                            <span class="text nav-text">Mi carrito</span>
+                        </a>
+                    </li>
+                    @endauth
+
                     @auth
                     @if(Auth::user() && Auth::User()->isAdmin())
                     <li class="nav-link">

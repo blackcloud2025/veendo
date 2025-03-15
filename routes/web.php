@@ -23,7 +23,7 @@ Route::get('/', function () {
         })
         ->paginate(10);
 
-        $ads = Ad::where('banner_type', 'horizontal')->get(); // O el tipo que necesites
+    $ads = Ad::where('banner_type', 'horizontal')->get(); // O el tipo que necesites
 
     return view('Homepage', ['products' => $products,  'ads' => $ads]);
 })->name("Home");
@@ -55,6 +55,15 @@ Route::get('History', function () {
 Route::get('Notifications', function () {
     return view('Notificationpage');
 })->name("Notificaciones");
+
+//vista del carrito de compras de usuario
+Route::get(
+    'Cart',
+    [
+        App\Http\Controllers\CartController::class,
+        'index'
+    ]
+)->name("carrito");
 
 
 
@@ -147,7 +156,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/users/{user}', [AuthController::class, 'destroy'])->name('users.destroy');
 });
 
-Route::get('/check-models', function() {
+Route::get('/check-models', function () {
     $modelPath = public_path('models');
     $files = File::files($modelPath);
     return [
@@ -155,3 +164,10 @@ Route::get('/check-models', function() {
         'files' => collect($files)->map(fn($file) => $file->getFilename())->toArray()
     ];
 });
+
+
+// Rutas adicionales del carrito
+Route::post('/cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/update', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
+Route::post('/cart/remove', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('cart.clear');

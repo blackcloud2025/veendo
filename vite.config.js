@@ -15,6 +15,7 @@ export default defineConfig({
                 'resources/css/Prodcard.css',
                 'resources/css/dashboard.css',
                 'resources/css/publisher.css',
+                'resources/css/cart.css',
 
                 //scripts
                 'resources/js/app.js',
