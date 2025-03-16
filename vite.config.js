@@ -25,6 +25,7 @@ export default defineConfig({
                 'resources/js/payment.js',
                 'resources/js/profile.js',
                 'resources/js/publisher.js',
+                'resources/js/cart.js',
             ],
             refresh: true,
         }),

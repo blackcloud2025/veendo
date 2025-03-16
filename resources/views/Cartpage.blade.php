@@ -1,130 +1,161 @@
 @extends('layout')
 
-@section('Titulo','my cart.')
+@section('Titulo', 'Mi Carrito')
 
 @section('styles')
-@vite('resources/css/Cart.css')
+@vite('resources/css/cart.css')
 @endsection
 
 @section('Contenido')
-<div class="container py-5">
-    <h1 class="mb-4">Mi Carrito de Compras</h1>
-    
+<div class="container">
+    <h1 class="cart-title">Mi Carrito de Compras</h1>
+
     @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
     @endif
-    
+
     @if(isset($products) && count($products) > 0)
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Imagen</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th>Subtotal</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($products as $product)
-                                <tr>
-                                    <td>
-                                        <a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a>
-                                    </td>
-                                    <td>
-                                        @if($product->images->count() > 0)
-                                            <img src="{{ asset('storage/' . $product->images[0]->image_path) }}" 
-                                                alt="{{ $product->name }}" 
-                                                style="width: 80px; height: auto;">
-                                        @else
-                                            <span>Sin imagen</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if($product->offer)
-                                            <span class="text-decoration-line-through">${{ number_format($product->price, 2) }}</span>
-                                            <span class="text-danger">${{ number_format($product->offer, 2) }}</span>
-                                        @else
-                                            ${{ number_format($product->price, 2) }}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('cart.update') }}" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $product->id }}">
-                                            <div class="input-group" style="width: 120px;">
-                                                <input type="number" name="quantity" class="form-control form-control-sm" 
-                                                    value="{{ $product->quantity }}" min="1">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-sm btn-outline-secondary" type="submit">
-                                                        <i class="fas fa-sync-alt"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </td>
-                                    <td>
-                                        @php
-                                            $price = $product->offer ? $product->offer : $product->price;
-                                            $subtotal = $price * $product->quantity;
-                                        @endphp
-                                        ${{ number_format($subtotal, 2) }}
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('cart.remove') }}" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $product->id }}">
-                                            <button type="submit" class="btn btn-sm btn-danger">
-                                                <i class="bx bx-trash"></i> Eliminar
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4" class="text-right font-weight-bold">Total:</td>
-                                <td colspan="2" class="font-weight-bold">${{ number_format($total, 2) }}</td>
-                            </tr>
-                        </tfoot>
-                    </table>
+    <div class="cart-card">
+        <div class="cart-items">
+            @php
+            $cartSubtotal = 0;
+            $cartDiscount = 0;
+            $cartTotal = 0;
+            @endphp
+
+            @foreach($products as $product)
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    @if($product->images->count() > 0)
+                    <img src="{{ asset('storage/' . $product->images[0]->image_path) }}"
+                        alt="{{ $product->name }}" class="product-image">
+                    @else
+                    <div class="no-image">Sin imagen</div>
+                    @endif
                 </div>
                 
-                <div class="d-flex justify-content-between mt-4">
-                    <form action="{{ route('cart.clear') }}" method="POST">
+                <div class="cart-item-details">
+                    <h3 class="product-name">
+                        <a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a>
+                    </h3>
+                    <div class="product-price">
+                        @if($product->offer)
+                        <span class="original-price">${{ number_format($product->price, 2) }}</span>
+                        <span class="discount-badge">-{{ number_format($product->offer, 2) }}%</span>
+                        @else
+                        <span>${{ number_format($product->price, 2) }}</span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="cart-item-quantity">
+                    <form action="{{ route('cart.update') }}" method="POST" class="quantity-form">
                         @csrf
-                        <button type="submit" class="btn btn-warning">
-                            <i class="fas fa-trash"></i> Vaciar carrito
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <div class="quantity-control">
+                            <button type="button" class="quantity-btn quantity-decrease" onclick="decreaseQuantity(this)">-</button>
+                            <input type="number" name="quantity" class="quantity-input"
+                                value="{{ $product->quantity }}" min="1">
+                            <button type="button" class="quantity-btn quantity-increase" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                        <button class="update-btn" type="submit">
+                            <i class="fas fa-sync-alt"></i>
+                            <span class="sr-only">Actualizar</span>
                         </button>
                     </form>
+                </div>
+
+                <div class="cart-item-totals">
+                    @php
+                    $price = $product->price;
+                    $subtotal = $price * $product->quantity;
+                    $discountPercentage = $product->offer;
+                    $discountAmount = $subtotal * ($discountPercentage / 100);
+                    $total = $subtotal - $discountAmount;
                     
-                    <a href="#" class="btn btn-success">
-                        <i class="fas fa-shopping-cart"></i> Proceder al pago
-                    </a>
+                    $cartSubtotal += $subtotal;
+                    $cartDiscount += $discountAmount;
+                    $cartTotal += $total;
+                    @endphp
+
+                    <div class="item-price-details">
+                        <div>Subtotal: <span>${{ number_format($subtotal, 2) }}</span></div>
+                        @if($product->offer)
+                        <div>Descuento: <span class="discount-amount">-${{ number_format($discountAmount, 2) }}</span></div>
+                        @endif
+                        <div class="item-total">Total: <span>${{ number_format($total, 2) }}</span></div>
+                    </div>
+                </div>
+
+                <div class="cart-item-actions">
+                    <form action="{{ route('cart.remove') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <button type="submit" class="remove-btn">
+                            <i class="fas fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="separator"></div>
+            @endforeach
+        </div>
+            
+        <div class="order-summary">
+            <div class="summary-content">
+                <h4 class="summary-title">Resumen del pedido</h4>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span>${{ number_format($cartSubtotal, 2) }}</span>
+                </div>
+                <div class="summary-row discount-row">
+                    <span>Descuento total:</span>
+                    <span>-${{ number_format($cartDiscount, 2) }}</span>
+                </div>
+                <div class="separator"></div>
+                <div class="summary-row total-row">
+                    <span>Total a pagar:</span>
+                    <span>${{ number_format($cartTotal, 2) }}</span>
                 </div>
             </div>
         </div>
-    @else
-        <div class="card">
-            <div class="card-body text-center py-5">
-                <i class="bx bx-cart"></i>
-                <h3>El carrito está vacío</h3>
-                <p>Parece que aún no has agregado productos a tu carrito.</p>
-                <a href="{{ route('Home') }}" class="btn btn-primary mt-3">
-                    Continuar comprando
-                </a>
-            </div>
+            
+        <div class="cart-actions">
+            <form action="{{ route('cart.clear') }}" method="POST">
+                @csrf
+                <button type="submit" class="clear-cart-btn">
+                    <i class="fas fa-trash"></i>
+                    Vaciar carrito
+                </button>
+            </form>
+                
+            <a href="#" class="checkout-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Proceder al pago
+            </a>
         </div>
+    </div>
+    @else
+    <div class="cart-card empty-cart">
+        <div class="empty-cart-content">
+            <div class="empty-cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3 class="empty-cart-title">El carrito está vacío</h3>
+            <p class="empty-cart-message">Parece que aún no has agregado productos a tu carrito.</p>
+            <a href="{{ route('Home') }}" class="continue-shopping-btn">
+                Continuar comprando
+            </a>
+        </div>
+    </div>
     @endif
 </div>
 @endsection
 
 @section('scripts')
+@vite('resources/js/cart.js')
 @endsection
+
