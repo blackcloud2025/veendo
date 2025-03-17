@@ -46,7 +46,7 @@
 
                 <!-- Subida de Imágenes -->
                 <div class="form-group full-width">
-                    <label class="form-label">Imágenes a publicar (máximo 3).</label>
+                    <label class="form-label">Imágenes a publicar (máximo 1).</label>
                     <div class="upload-area" id="dropZone" onclick="document.getElementById('images').click()">
                         <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

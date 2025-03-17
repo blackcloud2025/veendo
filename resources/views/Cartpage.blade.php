@@ -10,11 +10,6 @@
 <div class="container">
     <h1 class="cart-title">Mi Carrito de Compras</h1>
 
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
 
     @if(isset($products) && count($products) > 0)
     <div class="cart-card">

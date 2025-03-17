@@ -40,10 +40,11 @@ class AdController extends Controller
         $ad = Ad::create([
             'name' => $request->name,
             'description' => $request->description,
-            'image_path' => $paths[0], // Guardamos solo la primera imagen para el ejemplo
+            'image_path' => $paths[0], // Asumiendo que quieres usar la tercera imagen como principal
             'banner_type' => $request->banner_type,
             'user_id' => Auth::id(), // Asegúrate de que el user_id se proporciona
         ]);
+
 
         return redirect()->back()->with('success', 'Publicidad subida exitosamente');
     }
