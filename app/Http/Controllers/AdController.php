@@ -48,4 +48,36 @@ class AdController extends Controller
 
         return redirect()->back()->with('success', 'Publicidad subida exitosamente');
     }
+
+
+
+    public function destroy($id)
+    {
+        $ad = Ad::findOrFail($id);
+        Storage::disk('public')->delete($ad->image_path);
+        $ad->delete();
+
+        return redirect()->back()->with('success', 'Publicidad eliminada exitosamente');
+    }
+
+
+
+    public function update(Request $request, $id)
+    {
+        $ad = Ad::findOrFail($id);
+
+        if ($request->hasFile('images')) {
+            Storage::disk('public')->delete($ad->image_path);
+            $path = $request->file('images')->store('ads_images', 'public');
+            $ad->image_path = $path;
+        }
+
+        $ad->name = $request->name;
+        $ad->description = $request->description;
+        $ad->banner_type = $request->banner_type;
+        $ad->save();
+
+        return redirect()->back()->with('success', 'Publicidad actualizada exitosamente');
+    }
+
 }
