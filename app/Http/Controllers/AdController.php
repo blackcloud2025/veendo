@@ -50,7 +50,7 @@ class AdController extends Controller
     }
 
 
-
+   //funciion para eliminar la publicidad
     public function destroy($id)
     {
         $ad = Ad::findOrFail($id);
@@ -61,7 +61,7 @@ class AdController extends Controller
     }
 
 
-
+    //funcion para editar la publicidad
     public function update(Request $request, $id)
     {
         $ad = Ad::findOrFail($id);
