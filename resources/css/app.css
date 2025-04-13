@@ -50,7 +50,7 @@ body {
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
-    padding-bottom: 300px;
+    padding-bottom: 217px;
     ;
 }
 
@@ -794,6 +794,7 @@ body.dark .home .text {
     border-radius: 6px;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
     background-color: var(--crdbklt-color);
     display: flex;
     position: relative;
