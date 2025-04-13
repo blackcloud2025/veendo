@@ -16,7 +16,7 @@ export default defineConfig({
                 'resources/css/dashboard.css',
                 'resources/css/publisher.css',
                 'resources/css/cart.css',
-                'resources/css/history.css',
+                'resources/css/home.css',
 
                 
                 //scripts

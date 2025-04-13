@@ -3,7 +3,7 @@
 @section('Titulo','Home')
 
 @section('styles')
-@vite(['resources/css/slider.css', 'resources/css/history.css'])
+@vite(['resources/css/slider.css', 'resources/css/home.css'])
 @endsection
 
 @section('Contenido')
