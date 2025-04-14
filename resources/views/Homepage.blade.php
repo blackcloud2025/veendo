@@ -100,7 +100,7 @@
                     @endif
                 </div>
                 <div class="product-details">
-                    <p class="discount">OFF {{ $product->offer }}%</p>
+                    <span class="discount">OFF {{ $product->offer }}%</span>
                     <h3>{{ $product->name }}</h3>
                     <p class="price"> ${{ $product->price }}</p>
                     <div class="button-group">
