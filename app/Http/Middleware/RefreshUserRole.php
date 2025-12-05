@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class RoleMiddleware
+class RefreshUserRole
 {
     /**
      * Handle an incoming request.
@@ -14,13 +14,19 @@ class RoleMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-   
-    public function handle($request, Closure $next, $role)
+    public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role !== $role) {
-            return redirect('/');
+        // Si el usuario está autenticado, recarga sus datos de la BD
+        if (auth()->check()) {
+            $userId = auth()->user()->id;
+            $freshUser = \App\Models\User::find($userId);
+            
+            if ($freshUser) {
+                // Re-autenticar con los datos frescos
+                auth()->setUser($freshUser);
+            }
         }
+
         return $next($request);
     }
-
 }

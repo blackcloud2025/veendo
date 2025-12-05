@@ -97,7 +97,7 @@
                     @endauth
 
                     @auth
-                    @if(Auth::user() && Auth::User()->isAdmin())
+                    @if(Auth::user() && Auth::user()->isAdmin())
                     <li class="nav-link">
                         <a href="{{route('midashboard')}}">
                             <i class='bx bx-list-ul icon'></i>

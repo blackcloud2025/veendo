@@ -8,6 +8,7 @@
 
 @section('Contenido')
 <x-trjrpod
+    :id="$product->id"
     :images="$product->images"
     :name="$product->name"
     :description="$product->description"

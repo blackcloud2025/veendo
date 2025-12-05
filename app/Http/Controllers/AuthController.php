@@ -39,16 +39,23 @@ class AuthController extends Controller
         $pass = $request->password;
         $user = User::where('email', $email)->first();
 
-        if ($user && Hash::check($pass, $user->password)) {
-            $request->session()->regenerate();
-            Auth::login($user);
-            return redirect()->route('Home');
+        if (!$user) {
+            return redirect()
+                ->back()
+                ->with('error', 'El usuario no existe.')
+                ->withInput();
         }
 
-        return redirect()
-            ->back()
-            ->with('error', 'Error al ingrear usuario o password.')
-            ->withInput();
+        if (!Hash::check($pass, $user->password)) {
+            return redirect()
+                ->back()
+                ->with('error', 'La contraseña es incorrecta.')
+                ->withInput();
+        }
+
+        $request->session()->regenerate();
+        Auth::login($user);
+        return redirect()->route('Home');
     }
 
     //funcion de registro de usuario
@@ -73,7 +80,7 @@ class AuthController extends Controller
             'phone' => [
                 'required',
                 'min:10',
-                'regex:/^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$/' // Formato de teléfono (123) 456-7890 o 123-456-7890
+                'numeric' // Formato de teléfono
             ],
 
             'adress' => [
@@ -132,7 +139,7 @@ class AuthController extends Controller
 
     public function show()
     {
-        $user = Auth::user(); // Obtiene el usuario autenticado 
+        $user = Auth::user()->fresh(); // Obtiene el usuario autenticado y recarga de la BD
         return view('profilepage', compact('user'));
     }
 

@@ -60,9 +60,9 @@
 </div>
 
 <div class="action-bar">
-    <a href="#">
+    <a href="{{ route('orders.index') }}">
         <i class='bx bxs-file-plus'></i>
-        <span class="text nav-text"> poner graficas luego.</span>
+        <span class="text nav-text"> Ver Órdenes</span>
     </a>
 </div>
 

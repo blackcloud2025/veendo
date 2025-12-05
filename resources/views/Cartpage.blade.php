@@ -122,15 +122,20 @@
             <form action="{{ route('cart.clear') }}" method="POST">
                 @csrf
                 <button type="submit" class="clear-cart-btn">
-                    <i class="fas fa-trash"></i>
                     Vaciar carrito
                 </button>
             </form>
                 
-            <a href="#" class="checkout-btn">
-                <i class="fas fa-shopping-cart"></i>
+            <button type="button" class="checkout-btn" onclick="window.location.href='{{ route('order.checkout') }}'">
                 Proceder al pago
-            </a>
+            </button>
+
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content" id="modal-content">
+            <!-- Se llenará con AJAX -->
         </div>
     </div>
     @else
@@ -152,5 +157,61 @@
 
 @section('scripts')
 @vite('resources/js/cart.js')
+@vite('resources/js/payform.js')
+<script>
+function openCheckoutModal() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+    
+    fetch('/order/create-from-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(html => {
+        const modalContent = document.getElementById('modal-content');
+        const checkoutModal = document.getElementById('checkout-modal');
+        
+        if (!modalContent || !checkoutModal) {
+            console.error('Modal elements not found');
+            alert('Error: Elementos del modal no encontrados');
+            return;
+        }
+        
+        modalContent.innerHTML = html;
+        checkoutModal.style.display = 'flex';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error al abrir el modal de compra: ' + error.message);
+    });
+}
+
+function closeCheckoutModal() {
+    const modal = document.getElementById('checkout-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Cerrar modal al hacer clic fuera
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('checkout-modal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeCheckoutModal();
+            }
+        });
+    }
+});
+</script>
 @endsection
 

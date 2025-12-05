@@ -17,6 +17,7 @@ export default defineConfig({
                 'resources/css/publisher.css',
                 'resources/css/cart.css',
                 'resources/css/home.css',
+                'resources/css/payform.css',
 
                 
                 //scripts
@@ -28,6 +29,7 @@ export default defineConfig({
                 'resources/js/profile.js',
                 'resources/js/publisher.js',
                 'resources/js/cart.js',
+                'resources/js/payform.js',
             ],
             refresh: true,
         }),

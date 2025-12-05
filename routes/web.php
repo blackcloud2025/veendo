@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\OrderController;
 use App\Models\Product;
 use App\Models\Ad;
 use Illuminate\Support\Facades\Auth;
@@ -171,3 +172,28 @@ Route::post('/cart/add', [App\Http\Controllers\CartController::class, 'add'])->n
 Route::post('/cart/update', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/remove', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('cart.clear');
+
+// Rutas de órdenes (protegidas)
+Route::middleware(['auth'])->group(function () {
+    Route::post('/order/create-from-cart', [OrderController::class, 'createFromCart'])->name('order.createFromCart');
+    Route::get('/order/checkout', [OrderController::class, 'checkout'])->name('order.checkout');
+    Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+    Route::get('/order/{id}/pdf', [OrderController::class, 'generatePdf'])->name('order.pdf');
+});
+
+// Rutas CRUD de órdenes (con permisos diferenciados)
+Route::middleware(['auth'])->group(function () {
+    // Ver todas las órdenes (usuario ve sus órdenes, admin ve todas)
+    Route::get('/orders', [\App\Http\Controllers\OrdersController::class, 'index'])->name('orders.index');
+    
+    // Ver detalle de una orden
+    Route::get('/orders/{id}', [\App\Http\Controllers\OrdersController::class, 'show'])->name('orders.show');
+    
+    // Descargar PDF de orden
+    Route::get('/orders/{id}/pdf', [\App\Http\Controllers\OrdersController::class, 'downloadPdf'])->name('orders.downloadPdf');
+    
+    // Editar y eliminar (solo admin)
+    Route::get('/orders/{id}/edit', [\App\Http\Controllers\OrdersController::class, 'edit'])->name('orders.edit');
+    Route::put('/orders/{id}', [\App\Http\Controllers\OrdersController::class, 'update'])->name('orders.update');
+    Route::delete('/orders/{id}', [\App\Http\Controllers\OrdersController::class, 'destroy'])->name('orders.destroy');
+});

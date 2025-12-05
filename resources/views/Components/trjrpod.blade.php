@@ -45,10 +45,16 @@
                 @endguest
 
                 @auth
-                <a href="#" class="btn btn-secondary">
-                    <i class='bx bx-cart-alt'></i>
-                    Carrito
-                </a>
+                
+
+                <form action="{{ route('cart.add') }}" method="POST" class="btn btn-secondary">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $id }}">
+                            <button type="submit" class="btn btn-add-cart">
+                                <i class='bx bx-cart-alt'></i> Agregar al carrito
+                            </button>
+                        </form>
+
                 @endauth
             </div>
         </div>
