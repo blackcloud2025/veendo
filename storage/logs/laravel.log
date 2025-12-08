@@ -3347,3 +3347,341 @@ Did you mean this?
 #54 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\Admini...')
 #55 {main}
 "} 
+[2025-12-07 21:08:49] local.ERROR: Route [#] not defined. {"view":{"view":"C:\\Users\\Administrator\\veendo\\veendo\\resources\\views\\Dashboard.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-259283637 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#346</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-259283637\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","users":"<pre class=sf-dump id=sf-dump-622134877 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1348</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\User
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>User</span> {<a class=sf-dump-ref>#1347</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:12</span> [ &#8230;12]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:12</span> [ &#8230;12]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-622134877\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":1,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Route [#] not defined. at C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:467)
+[stacktrace]
+#0 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(826): Illuminate\\Routing\\UrlGenerator->route('#', Array, true)
+#1 C:\\Users\\Administrator\\veendo\\veendo\\resources\\views\\Dashboard.blade.php(68): route('#')
+#2 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\Users\\\\Admini...')
+#3 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Admini...', Array)
+#5 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Admini...', Array)
+#6 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\Users\\\\Admini...', Array)
+#7 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\Authenticate.php(20): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\RefreshUserRole.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RefreshUserRole->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#27 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#36 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#56 C:\\Users\\Administrator\\veendo\\veendo\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#57 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\Admini...')
+#58 {main}
+
+[previous exception] [object] (Symfony\\Component\\Routing\\Exception\\RouteNotFoundException(code: 0): Route [#] not defined. at C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:467)
+[stacktrace]
+#0 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(826): Illuminate\\Routing\\UrlGenerator->route('#', Array, true)
+#1 C:\\Users\\Administrator\\veendo\\veendo\\storage\\framework\\views\\9758fd22218e257631bd6a2b35a5e92aafce9684.php(68): route('#')
+#2 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\Users\\\\Admini...')
+#3 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Admini...', Array)
+#5 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Admini...', Array)
+#6 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\Users\\\\Admini...', Array)
+#7 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\Authenticate.php(20): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\RefreshUserRole.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RefreshUserRole->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#27 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#36 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#56 C:\\Users\\Administrator\\veendo\\veendo\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#57 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\Admini...')
+#58 {main}
+"} 
+[2025-12-07 21:08:54] local.ERROR: Route [#] not defined. {"view":{"view":"C:\\Users\\Administrator\\veendo\\veendo\\resources\\views\\Dashboard.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-356972727 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#346</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-356972727\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","users":"<pre class=sf-dump id=sf-dump-1583316923 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1348</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\User
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>User</span> {<a class=sf-dump-ref>#1347</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:12</span> [ &#8230;12]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:12</span> [ &#8230;12]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dates</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:9</span> [ &#8230;9]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1583316923\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":1,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Route [#] not defined. at C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:467)
+[stacktrace]
+#0 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(826): Illuminate\\Routing\\UrlGenerator->route('#', Array, true)
+#1 C:\\Users\\Administrator\\veendo\\veendo\\resources\\views\\Dashboard.blade.php(68): route('#')
+#2 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\Users\\\\Admini...')
+#3 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Admini...', Array)
+#5 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Admini...', Array)
+#6 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\Users\\\\Admini...', Array)
+#7 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\Authenticate.php(20): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\RefreshUserRole.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RefreshUserRole->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#27 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#36 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#56 C:\\Users\\Administrator\\veendo\\veendo\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#57 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\Admini...')
+#58 {main}
+
+[previous exception] [object] (Symfony\\Component\\Routing\\Exception\\RouteNotFoundException(code: 0): Route [#] not defined. at C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:467)
+[stacktrace]
+#0 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(826): Illuminate\\Routing\\UrlGenerator->route('#', Array, true)
+#1 C:\\Users\\Administrator\\veendo\\veendo\\storage\\framework\\views\\9758fd22218e257631bd6a2b35a5e92aafce9684.php(68): route('#')
+#2 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(109): require('C:\\\\Users\\\\Admini...')
+#3 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(110): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Admini...', Array)
+#5 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(70): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Admini...', Array)
+#6 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(195): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\Users\\\\Admini...', Array)
+#7 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(178): Illuminate\\View\\View->getContents()
+#8 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(147): Illuminate\\View\\View->renderContents()
+#9 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(69): Illuminate\\View\\View->render()
+#10 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(906): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(875): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\Authenticate.php(20): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\Administrator\\veendo\\veendo\\app\\Http\\Middleware\\RefreshUserRole.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): App\\Http\\Middleware\\RefreshUserRole->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(78): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#27 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(67): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(797): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(776): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(740): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#36 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(729): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(190): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(141): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(180): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(116): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(165): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(134): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#56 C:\\Users\\Administrator\\veendo\\veendo\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#57 C:\\Users\\Administrator\\veendo\\veendo\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\Admini...')
+#58 {main}
+"} 

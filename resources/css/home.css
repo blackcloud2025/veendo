@@ -385,6 +385,16 @@
     }
   }
 
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding: 10px 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
 
   
   /* Base styles for product cards */
@@ -493,7 +503,12 @@
     cursor: pointer;
     transition: all 0.2s;
     border: none;
-    width: 100%;
+    width: calc(100% - 0.5rem);
+    text-align: center;
+    margin: 0 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   
   .btn-outline {
@@ -516,6 +531,7 @@
   }
   
   .btn i {
+    color: rgb(253, 1, 1);
     margin-right: 0.5rem;
   }
   

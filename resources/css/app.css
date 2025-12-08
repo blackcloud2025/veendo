@@ -396,6 +396,16 @@ body.dark .home .text {
     box-shadow: 0px 0px 4px var(--shadow-color);
 }
 
+/*=======panel de tarjetas de producto===========*/
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    padding: 10px 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
 /*=======panel de producto===========*/
 
@@ -912,3 +922,4 @@ body.dark .home .text {
         opacity: 0;
     }
 }
+

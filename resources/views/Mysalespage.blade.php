@@ -2,7 +2,7 @@
 @section('Titulo','mis ventas.')
 
 @section('styles')
-@vite('resources/css/Prodcard.css')
+@vite(['resources/css/app.css', 'resources/css/Prodcard.css'])
 @endsection
 
 @section('Contenido')

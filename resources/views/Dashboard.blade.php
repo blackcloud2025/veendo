@@ -64,11 +64,6 @@
         <span class="text nav-text"> Ver Órdenes</span>
     </a>
 </div>
-<div class="action-bar">
-    <a href="{{ route('#') }}">
-        <i class='bx bxs-file-plus'></i>
-        <span class="text nav-text"> ver reportes</span>
-    </a>
-</div>
+
 @endsection
 

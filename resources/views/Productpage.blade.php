@@ -4,6 +4,8 @@
 
 @section('styles')
 @vite('resources/css/slider.css')
+@vite('resources/css/app.css')
+@vite('resources/css/Prodcard.css')
 @endsection
 
 @section('Contenido')
@@ -37,6 +39,7 @@
             </div>
 
             <div class="product-details">
+               
                 <p class="discount">OFF {{ $relatedProduct->offer }}%</p>
                 <h3>{{ $relatedProduct->name }}</h3>
                 <!--hay que hacer que no se desborde el precio--> 
@@ -45,8 +48,11 @@
                 <a href="{{ route('product.show', ['id' => $relatedProduct->id]) }}" class="btn">
                     <span class="text nav-text">Saber más</span>
                 </a>
-
+                
             </div>
+            
+
+            
         </div>
         @endforeach
     </div>
